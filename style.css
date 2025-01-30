@@ -1,0 +1,70 @@
+/* Fullscreen background for Three.js scene */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: #d3c8e0; /* A soft, pale lavender */
+    background: -webkit-linear-gradient(to left, #d3c8e0, #a8b9e8, #a2b4c9); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #d3c8e0, #a8b9e8, #a2b4c9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    background-size: cover;
+}
+
+/* Content styling */
+.content {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 5;
+    color: white;
+    font-family: Arial, sans-serif;
+}
+
+/* Navbar styling */
+.navbar {
+    z-index: 10;
+    width: 100%;
+    background-color: #343a40; /* Custom dark background color */
+    padding: 10px 20px;
+}
+
+/* Navbar items always in a row */
+.navbar-nav {
+    display: flex;
+    gap: 15px;
+}
+
+/* Theme toggle button */
+#theme-toggle {
+    text-decoration: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    display: inline-block;
+}
+
+/* Remove unwanted navbar hover effects */
+.navbar-nav .nav-item {
+    transition: background 0.3s ease-in-out;
+}
+
+.navbar-nav .nav-item:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+}
+
+/* Dropdown styling */
+.dropdown-menu {
+    background: #333;
+    border: none;
+}
+
+.dropdown-menu .dropdown-item {
+    color: white;
+}
+
+.dropdown-menu .dropdown-item:hover {
+    background: #555;
+}

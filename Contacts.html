@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Me</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS for Contacts Page -->
+    <link rel="stylesheet" href="contacts.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand" href="#">Console.WriteLine("My name is Sara!");</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ml-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="index.html">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown"
+                    aria-haspopup="true" aria-expanded="false">About</a>
+                <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                    <a class="dropdown-item" href="coding.html">Coding & Stuff</a>
+                    <a class="dropdown-item" href="NotCoding.html">When I am not coding</a>
+                </div>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="Portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="Contacts.html">Contacts</a>
+            </li>
+            <li class="nav-item">
+                <button id="theme-toggle" class="btn btn-link text-light">🌕</button>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<section id="contact">
+    <div class="section-content">
+        <h1 class="section-header">Let's <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Chat!</span></h1>
+        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
+    </div>
+    <div class="contact-section">
+    <div class="container">
+        <form>
+            <div class="col-md-6 form-line">
+                  <div class="form-group">
+                      <label for="exampleInputUsername">Your name</label>
+                    <input type="text" class="form-control" id="" placeholder="Your Name">
+                  </div>
+                  <div class="form-group">
+                    <label for="exampleInputEmail">Email Address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Your Email">
+                  </div>	
+                  <div class="form-group">
+                    <label for="telephone">Phone Number</label>
+                    <input type="tel" class="form-control" id="telephone" placeholder="Your Phone Number">
+                  </div>
+              </div>
+              <div class="col-md-6">
+                  <div class="form-group">
+                      <label for ="description"> Message</label>
+                       <textarea  class="form-control" id="description" placeholder="Your Message"></textarea>
+                  </div>
+                  <div>
+
+                      <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
+                  </div>
+                  
+            </div>
+        </form>
+    </div>
+</section>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+</body>
+</html>
+
+
