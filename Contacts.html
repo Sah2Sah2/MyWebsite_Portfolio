@@ -4,90 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Me</title>
+    
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    
     <!-- Custom CSS for Contacts Page -->
     <link rel="stylesheet" href="contacts.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Console.WriteLine("My name is Sara!");</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="index.html">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">About</a>
-                <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-                    <a class="dropdown-item" href="coding.html">Coding & Stuff</a>
-                    <a class="dropdown-item" href="NotCoding.html">When I am not coding</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Portfolio.html">Portfolio</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link active" href="Contacts.html">Contacts</a>
-            </li>
-            <li class="nav-item">
-                <button id="theme-toggle" class="btn btn-link text-light">🌕</button>
-            </li>
-        </ul>
-    </div>
-</nav>
+<!-- Header and Navbar Section -->
+<header class="fixed-top w-100" style="background-color: #f8f9fa;">
+    <!-- Project's Name in the Header -->
+    <h1 class="display-5 text-dark text-center py-2 mb-0">Console.WriteLine("Hello Moon! I'm Sara.");</h1>
 
-<section id="contact">
-    <div class="section-content">
-        <h1 class="section-header">Let's <span class="content-header wow fadeIn " data-wow-delay="0.2s" data-wow-duration="2s"> Chat!</span></h1>
-        <h3>Lorem Ipsum is simply dummy text of the printing and typesetting industry</h3>
-    </div>
-    <div class="contact-section">
-    <div class="container">
+    <!-- Navbar (with full width and fixed top) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+        <div class="container-fluid">
+            <ul class="navbar-nav mx-auto d-flex flex-row align-items-center"> <!-- Centered Navbar items in a row -->
+                <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="aboutDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">About</a>
+                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <a class="dropdown-item" href="coding.html">Coding & Stuff</a>
+                        <a class="dropdown-item" href="NotCoding.html">When I am not coding</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Contacts.html">Contacts</a></li>
+            </ul>
+
+            <!-- Theme Toggle Button (placed on the right side) -->
+            <button id="theme-toggle" class="btn btn-link ml-2">🌕</button>
+        </div>
+    </nav>
+</header>
+
+<div class="container mt-5">
+    <div class="row">
+      <!-- Text Section on Left -->
+      <div class="col-md-6 mb-5"> <!-- Added mb-5 here to increase space below the text section -->
+        <h3 class="text-start">About Me</h3>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+  
+        <!-- CV Download Button -->
+        <div class="mt-4">
+          <a href="path/to/your/cv.pdf" class="btn btn-secondary" download>Download My CV</a>
+        </div>
+      </div>
+  
+      <!-- Form on Right -->
+      <div class="col-md-6">
+        <h3 class="text-center mb-4">Contact Me</h3>
         <form>
-            <div class="col-md-6 form-line">
-                  <div class="form-group">
-                      <label for="exampleInputUsername">Your name</label>
-                    <input type="text" class="form-control" id="" placeholder="Your Name">
-                  </div>
-                  <div class="form-group">
-                    <label for="exampleInputEmail">Email Address</label>
-                    <input type="email" class="form-control" id="exampleInputEmail" placeholder="Your Email">
-                  </div>	
-                  <div class="form-group">
-                    <label for="telephone">Phone Number</label>
-                    <input type="tel" class="form-control" id="telephone" placeholder="Your Phone Number">
-                  </div>
-              </div>
-              <div class="col-md-6">
-                  <div class="form-group">
-                      <label for ="description"> Message</label>
-                       <textarea  class="form-control" id="description" placeholder="Your Message"></textarea>
-                  </div>
-                  <div>
-
-                      <button type="button" class="btn btn-default submit"><i class="fa fa-paper-plane" aria-hidden="true"></i>  Send Message</button>
-                  </div>
-                  
-            </div>
+          <div class="mb-3">
+            <label for="name" class="form-label">Your Name</label>
+            <input type="text" class="form-control" id="name" placeholder="Enter your name">
+          </div>
+          <div class="mb-3">
+            <label for="email" class="form-label">Your Email</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter your email">
+          </div>
+          <div class="mb-3">
+            <label for="message" class="form-label">Your Message</label>
+            <textarea class="form-control" id="message" rows="4" placeholder="Write your message here"></textarea>
+          </div>
+          
+          <div class="mb-3">
+            <button type="submit" class="btn btn-primary w-100">Send Message</button>
+          </div>
         </form>
+      </div>
     </div>
-</section>
+  </div>
+  
+  <script src="script.js"></script>
 
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+  <!-- Bootstrap JS and dependencies -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  
 </body>
 </html>
 

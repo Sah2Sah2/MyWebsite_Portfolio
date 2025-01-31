@@ -1,70 +1,132 @@
-/* Fullscreen background for Three.js scene */
-body, html {
+/* Default body styles */
+body {
     margin: 0;
-    padding: 0;
-    height: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Center the content vertically */
+    flex-direction: column;
     overflow: hidden;
-    background: #d3c8e0; /* A soft, pale lavender */
-    background: -webkit-linear-gradient(to left, #d3c8e0, #a8b9e8, #a2b4c9); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #d3c8e0, #a8b9e8, #a2b4c9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    background-size: cover;
+    position: relative; /* Ensure elements stack properly */
 }
 
-/* Content styling */
-.content {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    z-index: 5;
-    color: white;
-    font-family: Arial, sans-serif;
-}
-
-/* Navbar styling */
-.navbar {
-    z-index: 10;
+/* Fix the header and navbar to the top */
+header {
     width: 100%;
-    background-color: #343a40; /* Custom dark background color */
-    padding: 10px 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1050; /* Keep header and navbar on top */
+    background-color: #f8f9fa; /* Light background for the header */
 }
 
-/* Navbar items always in a row */
+/* Project name styling */
+header h1 {
+    margin-bottom: 0; /* Remove bottom margin to keep header tight */
+    font-size: 1.5rem; /* Adjust font size for smaller screens */
+    padding: 10px 0; /* Add padding for vertical spacing */
+}
+
+/* Navbar Styling */
+.navbar {
+    width: 100%; /* Make the navbar span the whole width */
+    padding: 0; /* Remove extra padding */
+    background-color: #e3f2fd; /* Light background color for the navbar */
+}
+
+/* Navbar items in a row */
 .navbar-nav {
     display: flex;
-    gap: 15px;
+    justify-content: center;
+    align-items: center;
+    gap: 15px; /* Add gap between navbar items */
+    margin: 0; /* Remove margin */
 }
 
-/* Theme toggle button */
+/* Ensure that the theme toggle button is on the right side */
+button#theme-toggle {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
+
+/* Adjust the canvas behind other elements */
+canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: -1; /* Send the canvas behind other elements */
+}
+
+/* Light Theme */
+body.light-theme {
+    background: linear-gradient(to left, #d3c8e0, #a8b9e8, #a2b4c9);
+    background: -webkit-linear-gradient(to left, #d3c8e0, #a8b9e8, #a2b4c9);
+}
+
+body.light-theme .landing-text {
+    color: white; /* Light text color for light theme */
+}
+
+/* Dark Theme */
+body.dark-theme {
+    background: linear-gradient(to left, #000000, #333333, #1a1a1a);
+    background: -webkit-linear-gradient(to left, #000000, #333333, #1a1a1a);
+}
+
+body.dark-theme .landing-text {
+    color: white; /* Light text color for dark theme */
+}
+
+
+/* Style for the toggle button */
 #theme-toggle {
-    text-decoration: none;
-    background: none;
-    border: none;
+    position: relative;
     font-size: 24px;
-    color: white;
-    cursor: pointer;
-    display: inline-block;
-}
-
-/* Remove unwanted navbar hover effects */
-.navbar-nav .nav-item {
-    transition: background 0.3s ease-in-out;
-}
-
-.navbar-nav .nav-item:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-radius: 5px;
-}
-
-/* Dropdown styling */
-.dropdown-menu {
-    background: #333;
+    padding: 10px 15px;
+    background: rgba(255, 255, 255, 0.2);
     border: none;
-}
-
-.dropdown-menu .dropdown-item {
+    border-radius: 8px;
+    cursor: pointer;
     color: white;
+    z-index: 10; /* Ensure the button is above the canvas */
+    margin-left: 10px; /* Space out the button from the last link */
 }
 
-.dropdown-menu .dropdown-item:hover {
-    background: #555;
+/* Make sure landing page text is visible */
+.landing-text {
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    top: 50%; /* Position vertically in the middle */
+    left: 50%; /* Position horizontally in the middle */
+    transform: translate(-50%, -50%); /* Offset by 50% of the width and height */
+    z-index: 10; /* Ensure text is above the canvas */
+    font-size: 2rem;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    width: 100%; /* Ensure it takes up the full width of the screen */
+}
+/* Adjust layout for smaller screens */
+@media (max-width: 767px) {
+    /* Make header text smaller for phone version */
+    header h1 {
+        font-size: 1.2rem; /* Smaller font size */
+    }
+
+    /* Stack navbar items in one line */
+    .navbar-nav {
+        flex-direction: row; /* Keep navbar items in a row */
+        justify-content: center; /* Center navbar items */
+    }
+
+    /* Make the navbar more compact */
+    .navbar-nav .nav-item {
+        padding: 0 5px; /* Reduce padding around each item */
+    }
+
+    /* Adjust toggle button size */
+    button#theme-toggle {
+        font-size: 1.2rem;
+    }
 }

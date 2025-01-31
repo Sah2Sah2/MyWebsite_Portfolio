@@ -11,44 +11,40 @@
 </head>
 <body>
 
-<!-- Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-    <a class="navbar-brand" href="#">Console.WriteLine("My name is Sara!");</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    
-    <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
-                <a class="nav-link" href="#">Home</a>
-            </li>
-            <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="aboutDropdown" role="button" data-toggle="dropdown"
-                    aria-haspopup="true" aria-expanded="false">About</a>
-                <div class="dropdown-menu" aria-labelledby="aboutDropdown">
-                    <a class="dropdown-item" href="coding.html">Coding & Stuff</a>
-                    <a class="dropdown-item" href="NotCoding.html">When I am not coding</a>
-                </div>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="Portfolio.html">Portfolio</a>
-            </li>
-        
-            <li class="nav-item">
-                <a class="nav-link" href="Contacts.html">Contacts</a>
-            </li>
-            <li class="nav-item">
-                <button id="theme-toggle" class="btn btn-link">🌕</button>
-            </li>
-        </ul>
-    </div>
-</nav>
+<!-- Header and Navbar Section -->
+<header class="fixed-top w-100" style="background-color: #f8f9fa;">
+    <!-- Project's Name in the Header -->
+    <h1 class="display-5 text-dark text-center py-2 mb-0">Console.WriteLine("Hello Moon! I'm Sara.");</h1>
+
+    <!-- Navbar (with full width and fixed top) -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
+        <div class="container-fluid">
+            <ul class="navbar-nav mx-auto d-flex flex-row align-items-center"> <!-- Centered Navbar items in a row -->
+                <li class="nav-item"><a class="nav-link text-dark" href="#">Home</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-dark" href="#" id="aboutDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">About</a>
+                    <div class="dropdown-menu" aria-labelledby="aboutDropdown">
+                        <a class="dropdown-item" href="coding.html">Coding & Stuff</a>
+                        <a class="dropdown-item" href="NotCoding.html">When I am not coding</a>
+                    </div>
+                </li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="Contacts.html">Contacts</a></li>
+            </ul>
+
+            <!-- Theme Toggle Button (placed on the right side) -->
+            <button id="theme-toggle" class="btn btn-link ml-2">🌕</button>
+        </div>
+    </nav>
+</header>
+
+
+
 
 <!-- Content section -->
 <div class="content mt-5 pt-5">
-    <h1>My name is Sara!</h1>
+    <h1>Hello Moon! I'm Sara.</h1>
     <p>Enjoy the spinning celestial object depending on your theme!</p>
 </div>
 
