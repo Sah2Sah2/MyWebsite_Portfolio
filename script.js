@@ -35,7 +35,7 @@ let isDarkTheme = localStorage.getItem("theme") === "dark" ||
 // Function to toggle the theme
 function updateTheme() {
     if (isDarkTheme) {
-        // Dark theme: Black background
+        // Dark theme: Light Blue background
         renderer.setClearColor(0xAEC6CF, 1);
         document.body.classList.add('dark-theme');
         document.body.classList.remove('light-theme');
@@ -63,7 +63,7 @@ document.getElementById("theme-toggle").addEventListener("click", () => {
 // Animation loop
 function animate() {
     requestAnimationFrame(animate);
-    sphere.rotation.y += 0.002;
+    sphere.rotation.y += 0.002; // Spin the moon
     renderer.render(scene, camera);
 }
 animate();
@@ -75,9 +75,7 @@ window.addEventListener('resize', () => {
     camera.updateProjectionMatrix();
 });
 
-document.querySelectorAll('.project').forEach(project => {
-    project.addEventListener('click', () => {
-      alert('You clicked on ' + project.querySelector('h3').innerText);
-    });
-  });
-  
+window.addEventListener('DOMContentLoaded', (event) => {
+    var navbarHeight = document.querySelector('header').offsetHeight;
+    document.body.style.paddingTop = navbarHeight + 'px'; // Dynamically apply the top padding
+});

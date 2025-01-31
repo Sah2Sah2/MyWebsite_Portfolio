@@ -1,71 +1,65 @@
-/* Styling for the project circles container */
-.project-circles {
-    display: grid; /* Use grid layout */
-    grid-template-columns: repeat(2, 1fr); /* Two columns */
-    gap: 50px; /* Added space between circles */
-    justify-content: center;
-    margin-top: 40px;
+/* Portfolio Section Styles */
+.portfolio {
+    background-color: #f8f9fa;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background: transparent;
 }
 
-/* Styling for the individual project circles */
-.project-circle {
-    width: 250px;
-    height: 250px;
-    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 40%, rgba(128, 128, 128, 0.9) 80%);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+/* Container Adjustments */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Card Style for Project (with screen-like shape) */
+.project-card {
     position: relative;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
     overflow: hidden;
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    cursor: pointer;
+    border-radius: 15px; /* More subtle rounding for the screen effect */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Screen-like shadow */
+    height: 400px; /* Slightly larger height */
+    transition: transform 0.3s ease;
+    background-color: #fff;
+    border: 3px solid #ccc; /* Slightly thicker border */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-/* Enlarge the circle slightly and add moon-like shadow when hovered */
-.project-circle:hover {
-    transform: scale(1.05); /* Slight scaling to avoid overlap */
-    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6); /* Add glow effect to remind of the moon */
-}
-
-/* Styling for text or image inside the circle */
-.project-circle p {
-    color: white;
-    font-weight: bold;
-    font-size: 20px;
-    z-index: 1;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
-}
-
-/* Additional styling for content within the circles */
-.project-circle img {
-    width: 80%;
-    height: auto;
-    border-radius: 50%;
+/* Styling for images inside project cards */
+.project-card img {
+    height: 90%;
+    width: 90%;
     object-fit: cover;
+    border-radius: 12px; /* Slight rounding on image */
 }
 
-/* Media query for mobile responsiveness */
-@media (max-width: 768px) {
-    .project-circles {
-        grid-template-columns: 1fr 1fr; /* Display 2 circles per row */
-    }
+.project-card h4 {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.2rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+}
 
-    .project-circle {
-        width: 200px; /* Adjust circle size for mobile */
-        height: 200px;
+
+@media (max-width: 768px) {
+    .portfolio {
+        padding-top: 30px;
+    }
+    .project-card h4 {
+        font-size: 1rem;
     }
 }
 
 @media (max-width: 480px) {
-    .project-circles {
-        grid-template-columns: 1fr; /* Stack all circles in a single column */
-    }
-
-    .project-circle {
-        width: 180px; /* Adjust circle size further for small screens */
-        height: 180px;
+    .project-card h4 {
+        font-size: 0.9rem;
     }
 }

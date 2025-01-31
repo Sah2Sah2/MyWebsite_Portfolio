@@ -4,18 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
-    
-    <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Custom CSS for Portfolio Page -->
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="portfolio.css">
+    <link rel="stylesheet" href="portfolio.css"> <!-- Link to external CSS -->
+    <link rel="stylesheet" href="style.css"> <!-- Link to external CSS -->
 </head>
-
 <body>
 
-<!-- Header and Navbar Section -->
+   <!-- Header and Navbar Section -->
 <header class="fixed-top w-100" style="background-color: #f8f9fa;">
     <!-- Project's Name in the Header -->
     <h1 class="display-5 text-dark text-center py-2 mb-0">Console.WriteLine("Hello Moon! I'm Sara.");</h1>
@@ -34,61 +29,64 @@
             <button id="theme-toggle" class="btn btn-link ml-2">🌕</button>
         </div>
     </nav>
-</header>
-
+</header>   
 
 <!-- Portfolio Section -->
-<section class="portfolio py-5 bg-light" style="padding-top: 100px;">
+<section class="portfolio py-5 bg-light">
     <div class="container">
-        <div class="text-center mb-5">
-            <h4 class="text-uppercase fw-bold text-primary">
-                Portfolio
-            </h4>
-            <hr class="w-25 mx-auto"/> 
-            <h2 class="mb-4"> Check Out My Work </h2>
-            <p class="lead"> Here is a small sample of what I have done so far</p>
+      <h2 class="text-center mb-4">My Portfolio</h2>
+      
+      <div class="row">
+        <!-- Project 1 -->
+        <div class="col-md-4 mb-4">
+          <div class="project-card">
+            <img src="/Photos/Projects/YourCatsitterInMajorna.png" class="img-fluid" alt="Project 1">
+            <h4 class="text-center mt-3">Your Cattsitter in Majorna</h4>
+          </div>
         </div>
-
-        <!-- Project Circles Container -->
-        <div class="project-circles">
-            <!-- Project 1 -->
-            <div class="project-circle text-center">
-                <div class="circle-content">
-                    <!-- Add project content like image or text here -->
-                    <p class="text-white">Project 1</p>
-                </div>
-            </div>
-            <!-- Project 2 -->
-            <div class="project-circle text-center">
-                <div class="circle-content">
-                    <!-- Add project content like image or text here -->
-                    <p class="text-white">Project 2</p>
-                </div>
-            </div>
-            <!-- Project 3 -->
-            <div class="project-circle text-center">
-                <div class="circle-content">
-                    <!-- Add project content like image or text here -->
-                    <p class="text-white">Project 3</p>
-                </div>
-            </div>
-            <!-- Project 4 -->
-            <div class="project-circle text-center">
-                <div class="circle-content">
-                    <!-- Add project content like image or text here -->
-                    <p class="text-white">Project 4</p>
-                </div>
-            </div>
+        <!-- Project 2 -->
+        <div class="col-md-4 mb-4">
+          <div class="project-card">
+            <img src="project2.jpg" class="img-fluid" alt="Project 2">
+            <h4 class="text-center mt-3">Project 2</h4>
+          </div>
         </div>
+        <!-- Project 3 -->
+        <div class="col-md-4 mb-4">
+          <div class="project-card">
+            <img src="project3.jpg" class="img-fluid" alt="Project 3">
+            <h4 class="text-center mt-3">Project 3</h4>
+          </div>
+        </div>
+      </div>
+      <!-- Second Row -->
+      <div class="row">
+        <!-- Project 4 -->
+        <div class="col-md-4 mb-4">
+          <div class="project-card">
+            <img src="project4.jpg" class="img-fluid" alt="Project 4">
+            <h4 class="text-center mt-3">Project 4</h4>
+          </div>
+        </div>
+        <!-- Project 5 -->
+        <div class="col-md-4 mb-4">
+          <div class="project-card">
+            <img src="project5.jpg" class="img-fluid" alt="Project 5">
+            <h4 class="text-center mt-3">Project 5</h4>
+          </div>
+        </div>
+        <!-- Project 6 -->
+        <div class="col-md-4 mb-4">
+          <div class="project-card">
+            <img src="project6.jpg" class="img-fluid" alt="Project 6">
+            <h4 class="text-center mt-3">Project 6</h4>
+          </div>
+        </div>
+      </div>
     </div>
-</section>
-
+  </section>
+  
 <script src="script.js"></script>
-
-<!-- Bootstrap JS and dependencies -->
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </body>
 </html>
