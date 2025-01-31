@@ -36,7 +36,7 @@ let isDarkTheme = localStorage.getItem("theme") === "dark" ||
 function updateTheme() {
     if (isDarkTheme) {
         // Dark theme: Black background
-        renderer.setClearColor(0x000000, 1);
+        renderer.setClearColor(0xAEC6CF, 1);
         document.body.classList.add('dark-theme');
         document.body.classList.remove('light-theme');
         document.getElementById("theme-toggle").textContent = '🌑'; // Dark theme emoji
@@ -74,3 +74,10 @@ window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 });
+
+document.querySelectorAll('.project').forEach(project => {
+    project.addEventListener('click', () => {
+      alert('You clicked on ' + project.querySelector('h3').innerText);
+    });
+  });
+  

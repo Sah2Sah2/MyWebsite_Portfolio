@@ -1,0 +1,71 @@
+/* Styling for the project circles container */
+.project-circles {
+    display: grid; /* Use grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Two columns */
+    gap: 50px; /* Added space between circles */
+    justify-content: center;
+    margin-top: 40px;
+}
+
+/* Styling for the individual project circles */
+.project-circle {
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.7) 40%, rgba(128, 128, 128, 0.9) 80%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+/* Enlarge the circle slightly and add moon-like shadow when hovered */
+.project-circle:hover {
+    transform: scale(1.05); /* Slight scaling to avoid overlap */
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.6); /* Add glow effect to remind of the moon */
+}
+
+/* Styling for text or image inside the circle */
+.project-circle p {
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    z-index: 1;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+/* Additional styling for content within the circles */
+.project-circle img {
+    width: 80%;
+    height: auto;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Media query for mobile responsiveness */
+@media (max-width: 768px) {
+    .project-circles {
+        grid-template-columns: 1fr 1fr; /* Display 2 circles per row */
+    }
+
+    .project-circle {
+        width: 200px; /* Adjust circle size for mobile */
+        height: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .project-circles {
+        grid-template-columns: 1fr; /* Stack all circles in a single column */
+    }
+
+    .project-circle {
+        width: 180px; /* Adjust circle size further for small screens */
+        height: 180px;
+    }
+}
