@@ -8,6 +8,9 @@
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    
     <!-- Custom CSS for Contacts Page -->
     <link rel="stylesheet" href="contacts.css">
     <link rel="stylesheet" href="style.css">
@@ -17,71 +20,81 @@
 
 <!-- Header and Navbar Section -->
 <header class="fixed-top w-100" style="background-color: #f8f9fa;">
-    <!-- Project's Name in the Header -->
     <h1 class="display-5 text-dark text-center py-2 mb-0">Console.WriteLine("Hello Moon! I'm Sara.");</h1>
-
-    <!-- Navbar (with full width and fixed top) -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light p-0">
         <div class="container-fluid">
-            <ul class="navbar-nav mx-auto d-flex flex-row align-items-center"> <!-- Centered Navbar items in a row -->
+            <ul class="navbar-nav mx-auto d-flex flex-row align-items-center">
                 <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="about.html">About Me</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="Portfolio.html">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="Contacts.html">Contacts</a></li>
             </ul>
-
-            <!-- Theme Toggle Button (placed on the right side) -->
             <button id="theme-toggle" class="btn btn-link ml-2">🌕</button>
         </div>
     </nav>
 </header>
 
+<!-- Main Content Section -->
 <div class="container mt-5">
     <div class="row">
-      <!-- Text Section on Left -->
-      <div class="col-md-6 mb-5"> <!-- Added mb-5 here to increase space below the text section -->
-        <h3 class="text-start">Let's talk! </h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
-  
-        <!-- CV Download Button -->
-        <div class="mt-4">
-          <a href="path/to/your/cv.pdf" class="btn btn-secondary" download>Download My CV</a>
-        </div>
-      </div>
-  
-      <!-- Form on Right -->
-      <div class="col-md-6">
-        <h3 class="text-center mb-4"></h3>
-        <form>
-          <div class="mb-3">
-            <label for="name" class="form-label">Your Name</label>
-            <input type="text" class="form-control" id="name" placeholder="Enter your name">
-          </div>
-          <div class="mb-3">
-            <label for="email" class="form-label">Your Email</label>
-            <input type="email" class="form-control" id="email" placeholder="Enter your email">
-          </div>
-          <div class="mb-3">
-            <label for="message" class="form-label">Your Message</label>
-            <textarea class="form-control" id="message" rows="4" placeholder="Write your message here"></textarea>
-          </div>
-          
-          <div class="mb-3">
-            <button type="submit" class="btn btn-primary w-100">Send Message</button>
-          </div>
-        </form>
-      </div>
-    </div>
-  </div>
-  
-  <script src="script.js"></script>
+        <!-- Text Section on Left -->
+        <div class="col-md-6 mb-5">
+            <h3 class="text-start">Let's talk! </h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
 
-  <!-- Bootstrap JS and dependencies -->
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  
+            <!-- CV Download Button -->
+            <div class="mt-4">
+                <a href="path/to/your/cv.pdf" class="btn btn-secondary" download>Download My CV</a>
+            </div>
+
+            <!-- New Section for Social Media Links -->
+            <div class="mt-5">
+                <h5>Connect with me:</h5>
+                <p>Feel free to reach out to me via my social media profiles.</p>
+                <div>
+                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="btn btn-outline-primary mr-2">
+                        <i class="fab fa-linkedin"></i> LinkedIn
+                    </a>
+                    <a href="https://github.com/yourprofile" target="_blank" class="btn btn-outline-dark">
+                        <i class="fab fa-github"></i> GitHub
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form on Right -->
+        <div class="col-md-6">
+            <h3 class="text-center mb-4">Contact Form</h3>
+            <form>
+                <div class="mb-3">
+                    <label for="name" class="form-label">Your Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                </div>
+
+                <div class="mb-3">
+                    <label for="email" class="form-label">Your Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                </div>
+
+                <div class="mb-3">
+                    <label for="message" class="form-label">Your Message</label>
+                    <textarea class="form-control" id="message" rows="4" placeholder="Write your message here"></textarea>
+                </div>
+
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="script.js"></script>
+
+<!-- Bootstrap JS and dependencies -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 </body>
 </html>
-
-
