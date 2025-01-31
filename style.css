@@ -62,20 +62,16 @@ canvas {
     z-index: -1; /* Send the canvas behind other elements */
 }
 
-/* Light Theme */
 body.light-theme {
-    background: linear-gradient(to left, #d3c8e0, #a8b9e8, #a2b4c9);
-    background: -webkit-linear-gradient(to left, #d3c8e0, #a8b9e8, #a2b4c9);
+    background-color: #d3c8e0 !important; /* Soft purple background for light theme */
 }
 
 body.light-theme .landing-text {
     color: white; /* Light text color for light theme */
 }
 
-/* Dark Theme */
 body.dark-theme {
-    background: linear-gradient(to left, #000000, #333333, #1a1a1a);
-    background: -webkit-linear-gradient(to left, #000000, #333333, #1a1a1a);
+    background-color: #AEC6CF; /* Light blue background for dark theme */
 }
 
 body.dark-theme .landing-text {

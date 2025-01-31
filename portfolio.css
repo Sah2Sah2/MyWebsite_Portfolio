@@ -1,6 +1,6 @@
 /* Portfolio Section Styles */
 .portfolio {
-    background-color: #f8f9fa;
+    background-color:transparent !important;
     padding-top: 50px;
     padding-bottom: 50px;
     background: transparent;
