@@ -6,6 +6,7 @@ PORTFOLIO SECTION - Styling
 
 /* Portfolio Section Styles */
 .portfolio {
+    display: flex;
     background-color: transparent !important;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -18,10 +19,12 @@ PORTFOLIO SECTION - Styling
 .container {
     max-width: 1200px;
     margin: 0 auto;
+    padding: 0 15px;
 }
 
 /* Card Style for Project (with screen-like shape) */
 .project-card {
+    text-align: center;
     position: relative;
     overflow: hidden;
     border-radius: 15px; /* More subtle rounding for the screen effect */
