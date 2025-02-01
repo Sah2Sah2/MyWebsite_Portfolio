@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
             body.classList.add('light-theme');
             body.classList.remove('dark-theme');
             moonIcon.textContent = '🌕'; // Light theme emoji
-            localStorage.setItem("theme", "light"); // Save light theme in localStorage
+            localStorage.setItem("theme", "light-theme"); // Save light theme in localStorage
         } else {
             // Dark theme settings
             body.style.backgroundColor = '#AEC6CF';  // Dark theme background color (pastel blue)
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
             body.classList.add('dark-theme');
             body.classList.remove('light-theme');
             moonIcon.textContent = '🌕'; // Dark theme emoji (same emoji used)
-            localStorage.setItem("theme", "dark"); // Save dark theme in localStorage
+            localStorage.setItem("theme", "dark-theme"); // Save dark theme in localStorage
         }
     }
 

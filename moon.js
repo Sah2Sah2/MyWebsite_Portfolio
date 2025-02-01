@@ -33,7 +33,7 @@ window.addEventListener('resize', () => {
 // Render function
 function animate() {
     requestAnimationFrame(animate);
-    sphere.rotation.y += 0.002;
+    sphere.rotation.y += 0.001;
     renderer.render(scene, camera);
 }
 animate();
