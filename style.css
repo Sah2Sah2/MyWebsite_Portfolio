@@ -1,4 +1,16 @@
-/* Default body styles */
+/* General styling 
+
+Font size: 
+           
+*/
+
+
+/*
+-----------------------------------------------------------
+ BODY 
+-----------------------------------------------------------
+*/
+
 body {
     margin: 0;
     display: flex;
@@ -30,7 +42,12 @@ header h1 {
     padding: 10px 0; /* Add padding for vertical spacing */
 }
 
-/* Navbar Styling */
+/*
+-----------------------------------------------------------
+  NAVIGATION BAR
+-----------------------------------------------------------
+*/
+
 .navbar {
     width: 100%; /* Make the navbar span the whole width */
     padding: 0; /* Remove extra padding */
@@ -44,12 +61,6 @@ header h1 {
     align-items: center;
     gap: 15px; /* Add gap between navbar items */
     margin: 0; /* Remove margin */
-}
-
-/* Ensure that the theme toggle button is on the right side */
-button#theme-toggle {
-    margin-left: 10px;
-    font-size: 1.2rem;
 }
 
 /* Adjust the canvas behind other elements */
@@ -78,6 +89,17 @@ body.dark-theme .landing-text {
     color: white; /* Light text color for dark theme */
 }
 
+/*
+-----------------------------------------------------------
+  TOGGLE
+-----------------------------------------------------------
+*/
+
+/* Ensure that the theme toggle button is on the right side */
+button#theme-toggle {
+    margin-left: 10px;
+    font-size: 1.2rem;
+}
 /* Style for the toggle button */
 #theme-toggle {
     position: relative;
@@ -92,21 +114,12 @@ body.dark-theme .landing-text {
     margin-left: 10px; /* Space out the button from the last link */
 }
 
-/* Make sure landing page text is visible */
-.landing-text {
-    position: absolute; /* Position relative to the nearest positioned ancestor */
-    top: 50%; /* Position vertically in the middle */
-    left: 50%; /* Position horizontally in the middle */
-    transform: translate(-50%, -50%); /* Offset by 50% of the width and height */
-    z-index: 10; /* Ensure text is above the canvas */
-    font-size: 2rem;
-    text-align: center;
-    font-family: Arial, sans-serif;
-    padding: 20px;
-    width: 100%; /* Ensure it takes up the full width of the screen */
-}
+/*
+-----------------------------------------------------------
+SCROLL BAR
+-----------------------------------------------------------
+*/
 
-/* Scrollbar */
 /* Style the scrollbar itself */
 ::-webkit-scrollbar {
     width: 12px; /* Width of the vertical scrollbar */
@@ -136,6 +149,41 @@ body.dark-theme .landing-text {
     background-color: #f1f1f1; /* Same color as the track */
 }
 
+/*
+-----------------------------------------------------------
+  FOOTER
+-----------------------------------------------------------
+*/
+
+.footer {
+    display: flex; /* Enable Flexbox */
+    justify-content: center; /* Center content horizontally */
+    align-items: center; /* Center content vertically */
+    height: 40px; /* Set the height of the footer */
+    padding: 3px; /* Optional padding to adjust spacing */
+    text-align: center; /* Ensure text is centered in the block */
+    position: fixed; /* Fixed positioning */
+    bottom: 0; /* Align to the bottom of the viewport */
+    left: 0; /* Ensure it spans across the width */
+    width: 100%; /* Full width of the viewport */
+}
+
+.footer-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.footer-content a {
+    color: black; /* Links inside footer-content remain white */
+    text-decoration: none; /* Remove underline */
+    font-style: italic; /* Make the text italic */
+}
 
 /* Adjust layout for smaller screens */
 @media (max-width: 767px) {

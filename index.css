@@ -3,3 +3,17 @@
     text-align: left !important;
     width: fit-content; /* Ensures it doesn't take full width */
 }
+
+/* Make sure landing page text is visible */
+.landing-text {
+    position: absolute; /* Position relative to the nearest positioned ancestor */
+    top: 50%; /* Position vertically in the middle */
+    left: 50%; /* Position horizontally in the middle */
+    transform: translate(-50%, -50%); /* Offset by 50% of the width and height */
+    z-index: 10; /* Ensure text is above the canvas */
+    font-size: 2rem;
+    text-align: center;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    width: 100%; /* Ensure it takes up the full width of the screen */
+}

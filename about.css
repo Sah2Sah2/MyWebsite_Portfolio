@@ -41,3 +41,31 @@
 .carousel-control-next-icon:hover {
     transform: scale(1.2); /* Slight zoom effect on hover */
 }
+
+/* Toolkit Section */
+#my-toolkit {
+    background-color: #f9f9f9; /* Light background for contrast */
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Icons Styling */
+.tech-icon {
+    width: 60px;
+    height: 60px;
+    object-fit: contain;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect */
+.tech-icon:hover {
+    transform: scale(1.1);
+}
+
+/* Toolkit Item */
+.toolkit-item {
+    text-align: center;
+    font-weight: bold;
+}
+
