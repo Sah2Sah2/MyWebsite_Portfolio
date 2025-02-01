@@ -1,3 +1,9 @@
+/*
+-----------------------------------------------------------
+CONTACTS SECTION - Styling
+-----------------------------------------------------------
+*/
+
 /* Light Theme */
 body.light-theme {
     color: #333;
@@ -7,3 +13,95 @@ body.light-theme {
 body.dark-theme {
     color: black;
 }
+
+/* Style for the CV download button */
+a.btn.btn-secondary {
+    background-color: #BFD3C1; /* Soft pastel green */
+    color: #3B4D3A; /* Muted dark green text */
+    font-size: 16px;
+    padding: 12px 24px; /* Slightly larger padding */
+    border-radius: 25px; /* Round button edges */
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.btn.btn-secondary:hover {
+    background-color: #A8C7A0; /* Slightly darker pastel green */
+    transform: translateY(-2px); /* Slight lifting effect */
+}
+
+/* Style for social media buttons */
+a.btn.btn-outline-primary,
+a.btn.btn-outline-dark {
+    font-size: 16px;
+    padding: 10px 20px;
+    border-radius: 30px; /* Round button edges */
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    transition: background-color 0.3s, border-color 0.3s;
+    border: 1px solid black; 
+}
+
+/* Linkedin btn */
+a.btn.btn-outline-primary:hover {
+    background-color: #BFD3C1; 
+    color: black; /
+}
+
+/* GitHub btn */
+a.btn.btn-outline-dark:hover {
+    background-color: #BFD3C1 ; 
+    color: black; 
+}
+
+/* Style for the form */
+form .form-label {
+    font-size: 1rem;
+    font-weight: normal; 
+    color: black; 
+}
+
+form .form-control {
+    border-radius: 15px; 
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #F4F6F5; 
+    border: 1px solid #D1D1D1; 
+    color: #5D6A6E;
+    transition: border-color 0.3s ease;
+}
+
+form .form-control:focus {
+    border-color: #BFD3C1; 
+    outline: none;
+}
+
+form .btn.btn-primary {
+    background-color: #BFD3C1; 
+    border-color: black;
+    color: #3B4D3A; 
+    font-size: 16px;
+    padding: 12px 24px;
+    border-radius: 25px;
+    width: 100%;
+    transition: background-color 0.3s, transform 0.2s ease;
+}
+
+form .btn.btn-primary:hover {
+    background-color: #A8C7A0; /* Slightly darker pastel teal */
+    transform: translateY(-2px); /* Lifting effect */
+}
+
+mark {
+    background: linear-gradient(-100deg, hsla(105, 25%, 70%, .3), hsla(105, 25%, 70%, .7) 95%, hsla(105, 25%, 70%, .1));
+    border-radius: 1em 0;
+    padding: .5rem;
+    display: inline-block; /* Ensures the mark behaves like text */
+    margin-top: 0.2rem; /* Adds space above the highlighted text */
+    margin-bottom: 0.2rem; /* Adds space below the highlighted text */
+}
+

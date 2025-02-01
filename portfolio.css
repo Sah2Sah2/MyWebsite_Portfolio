@@ -1,6 +1,12 @@
+/*
+-----------------------------------------------------------
+PORTFOLIO SECTION - Styling
+-----------------------------------------------------------
+*/
+
 /* Portfolio Section Styles */
 .portfolio {
-    background-color:transparent !important;
+    background-color: transparent !important;
     padding-top: 50px;
     padding-bottom: 50px;
     background: transparent;
@@ -22,8 +28,8 @@
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Screen-like shadow */
     height: 400px; /* Slightly larger height */
     transition: transform 0.3s ease;
-    background-color: #fff;
-    border: 3px solid #ccc; /* Slightly thicker border */
+    background-color: #BFD3C1;
+    border: 3px solid #A8C7A0; /* Slightly thicker border */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -35,6 +41,32 @@
     width: 90%;
     object-fit: cover;
     border-radius: 12px; /* Slight rounding on image */
+    transition: opacity 0.3s ease;
+}
+
+/* Overlay for the hover effect */
+.project-card .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    visibility: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+    border-radius: 15px;
+    padding: 10px;
+}
+
+.project-card:hover .overlay {
+    opacity: 1;
+    visibility: visible;
 }
 
 .project-card h4 {
@@ -50,7 +82,12 @@
     text-align: center;
 }
 
+/* Ensure the image fades when hovered */
+.project-card:hover img {
+    opacity: 0.3;
+}
 
+/* Media Queries */
 @media (max-width: 768px) {
     .portfolio {
         padding-top: 30px;
@@ -65,3 +102,4 @@
         font-size: 0.9rem;
     }
 }
+

@@ -1,19 +1,35 @@
+/*
+-----------------------------------------------------------
+INDEX SECTION - Styling
+-----------------------------------------------------------
+*/
+
 .content {
     margin-left: 50px !important; /* Adjust value as needed */
     text-align: left !important;
     width: fit-content; /* Ensures it doesn't take full width */
 }
 
-/* Make sure landing page text is visible */
 .landing-text {
-    position: absolute; /* Position relative to the nearest positioned ancestor */
-    top: 50%; /* Position vertically in the middle */
-    left: 50%; /* Position horizontally in the middle */
-    transform: translate(-50%, -50%); /* Offset by 50% of the width and height */
-    z-index: 10; /* Ensure text is above the canvas */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
     font-size: 2rem;
     text-align: center;
-    font-family: Arial, sans-serif;
     padding: 20px;
-    width: 100%; /* Ensure it takes up the full width of the screen */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    width: 100%;
+    line-height: 4; /* Increase line height to create more space between lines */
+}
+
+/* Highlighted text */
+mark {
+    background: linear-gradient(-100deg, hsla(105, 25%, 70%, .3), hsla(105, 25%, 70%, .7) 95%, hsla(105, 25%, 70%, .1));
+    border-radius: 1em 0;
+    padding: .5rem;
+    display: inline-block; /* Ensures the mark behaves like text */
+    margin-top: 0.2rem; /* Adds space above the highlighted text */
+    margin-bottom: 0.2rem; /* Adds space below the highlighted text */
 }
