@@ -7,6 +7,24 @@ body.dark-theme {
     color: black;
 }
 
+/* Style for the CV download button */
+a.btn.btn-secondary {
+    background-color: #BFD3C1; /* Soft pastel green */
+    color: #3B4D3A; /* Muted dark green text */
+    font-size: 16px;
+    padding: 12px 24px; /* Slightly larger padding */
+    border-radius: 25px; /* Round button edges */
+    text-align: center;
+    text-decoration: none;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+a.btn.btn-secondary:hover {
+    background-color: #A8C7A0; /* Slightly darker pastel green */
+    transform: translateY(-2px); /* Slight lifting effect */
+}
+
 .glass-card {
     background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
     backdrop-filter: blur(10px); /* Blur effect */
@@ -59,7 +77,7 @@ body.dark-theme {
 
 .flip-card-back {
     background: transparent;
-    color: white;
+    color: black;
     transform: rotateY(180deg);
 }
 
