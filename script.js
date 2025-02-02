@@ -50,3 +50,66 @@ document.addEventListener("DOMContentLoaded", function () {
     var navbarHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 0;
     document.body.style.paddingTop = navbarHeight + 'px'; // Dynamically apply the top padding
 });
+
+
+
+// Stars creation function
+
+function createStars(numberOfStars) {
+    for (var i = 0; i < numberOfStars; i++) {
+        drawStars();
+    }
+}
+
+// Function to create and position stars
+function drawStars(){
+    var tmpStar = document.createElement('figure');
+    tmpStar.className = "star";
+    tmpStar.style.top = Math.random() * 100 + '%';  // Random top position
+    tmpStar.style.left = Math.random() * 100 + '%'; // Random left position
+    document.getElementById('sky').appendChild(tmpStar);  // Append to #sky
+}
+
+// Function to select all stars
+function selectStars() {
+    var stars = document.querySelectorAll(".star");
+    console.log(stars); // This will log all the stars to the console
+}
+
+// Animate stars (this should not affect the h1 element)
+function animateStars() {
+    var stars = document.querySelectorAll(".star");
+    Array.prototype.forEach.call(stars, function(el) {
+        gsap.to(el, { 
+            opacity: Math.random(), 
+            duration: Math.random() * 0.5 + 0.5, 
+            onComplete: animateStars
+        });
+    });
+}
+
+// Initialize stars and animation
+createStars(200);
+selectStars();
+animateStars();
+
+// Sliding text 
+
+const canvas = document.getElementById('scrollingCanvas');
+const ctx = canvas.getContext('2d');
+const text = "Scrolling Text Example";
+let x = canvas.width;
+
+function draw() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+  ctx.font = '20px Arial';
+  ctx.fillStyle = 'black';
+  ctx.fillText(text, x, 30);
+  x -= 2; // Adjust speed of scrolling here
+  if (x < -ctx.measureText(text).width) {
+    x = canvas.width; // Reset position when text is out of view
+  }
+  requestAnimationFrame(draw);
+}
+
+draw();

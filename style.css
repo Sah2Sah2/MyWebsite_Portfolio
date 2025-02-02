@@ -43,17 +43,41 @@ body {
     padding-top: 100px;
     padding-bottom: 40px; /* Adds space for the footer */
     min-height: 100vh; /* Ensure content fills the screen without being cut off */
+    opacity: 1 important!;
 }
 
 
+/* Make sure the header has the correct styling */
 header {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
     z-index: 1050; /* Keep header and navbar on top */
-    background-color: #f8f9fa; /* Light background for the header */
+    background-color: #000029; /* Dark background for the header */
     padding: 10px 0; 
+    overflow: hidden;
+}
+
+/* Add a sky background (for the stars effect) */
+#sky {
+    height: 100%;  /* Ensure it takes up the full height of the header */
+    position: absolute; /* Make sure it covers the entire header */
+    width: 100%;  /* Make it span the full width of the header */
+    top: 0;
+    left: 0;
+    pointer-events: none;  /* Make sure it doesn't interfere with other elements */
+    z-index: 1;  /* Ensure it stays behind other elements */
+}
+
+/* Star effect */
+.star {
+    box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.4);
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    border-radius: 2px;
+    background-color: white;
 }
 
 /* Project name styling */
@@ -61,7 +85,15 @@ header h1 {
     margin-bottom: 0; /* Remove bottom margin to keep header tight */
     font-size: 1.5rem; /* Adjust font size for smaller screens */
     padding: 10px 0; /* Add padding for vertical spacing */
+    color: white !important; /* Ensure text is white */
+    position: relative; /* Ensure it stays in the document flow */
+    z-index: 2; /* Ensure the text stays above the stars */
+    opacity: 1 !important; /* Explicitly set opacity to ensure it's not transparent */
+    
 }
+
+
+
 
 /*
 -----------------------------------------------------------
@@ -69,14 +101,27 @@ header h1 {
 -----------------------------------------------------------
 */
 
+/* Navbar styling */
 .navbar {
     width: 100%; /* Make the navbar span the whole width */
     padding: 0; /* Remove extra padding */
-    background-color: #e3f2fd; /* Light background color for the navbar */
+    background-color: transparent important!; /* Dark background color for the navbar */
+    position: relative; /* Ensure navbar stays within the header */
+    z-index: -2; /* Place the navbar above the sky and heading */
+    margin: 0; /* Ensure no additional margins */
+    border: none; /* Ensure no borders */
+}
+
+/* Remove any extra padding or margin in container-fluid */
+.container-fluid {
+    padding: 0;  /* Remove any default padding */
+    margin: 0;    /* Remove any margin */
 }
 
 /* Navbar items in a row */
 .navbar-nav {
+    background-color: transparent !important;
+    color: white important!;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -84,6 +129,26 @@ header h1 {
     margin: 0; /* Remove margin */
 }
 
+/* Optional: If there's any unwanted white line, ensure no extra borders or margins */
+.navbar-light {
+    border: none;
+    background-color: transparent !important;
+}
+
+/* Make sure navbar text is not transparent and visible */
+nav.navbar .navbar-nav .nav-link {
+    color: white !important; /* Set text color to white (or any color you prefer) */
+}
+
+/* Optional: if you want the navbar links to change color on hover */
+nav.navbar .navbar-nav .nav-link:hover {
+    color: #F9E36B !important; /* Lighter color on hover for contrast */
+    transform: scale(1.1);
+}
+
+.navbar-toggler {
+    border: none;
+}
 /* Adjust the canvas behind other elements */
 canvas {
     position: absolute;
@@ -121,18 +186,37 @@ button#theme-toggle {
     margin-left: 10px;
     font-size: 1.2rem;
 }
+
 /* Style for the toggle button */
 #theme-toggle {
     position: relative;
     font-size: 24px;
     padding: 10px 15px;
-    background: rgba(255, 255, 255, 0.2);
+    background: none;
     border: none;
     border-radius: 8px;
     cursor: pointer;
     color: white;
     z-index: 10; /* Ensure the button is above the canvas */
     margin-left: 10px; /* Space out the button from the last link */
+    box-shadow: none;
+}
+
+/* Remove focus and active outline/box-shadow */
+#theme-toggle:focus, 
+#theme-toggle:active {
+    outline: none; /* Remove outline on focus */
+    box-shadow: none; /* Remove box-shadow on active */
+    border: none;
+}
+
+#theme-toggle:hover {
+    transform: scale(1.1); 
+}
+
+/* Add smooth transition to the button */
+#theme-toggle:focus-visible {
+    outline: none !important; /* Remove outline */
 }
 
 /*
@@ -213,15 +297,25 @@ SCROLL BAR
         font-size: 1.2rem; /* Smaller font size */
     }
 
-    /* Stack navbar items in one line */
-    .navbar-nav {
-        flex-direction: row; /* Keep navbar items in a row */
-        justify-content: center; /* Center navbar items */
+    nav.navbar .navbar-nav {
+        text-align: center; /* Center items on small screens */
     }
 
-    /* Make the navbar more compact */
-    .navbar-nav .nav-item {
-        padding: 0 5px; /* Reduce padding around each item */
+    nav.navbar .nav-item {
+        padding: 0 10px; /* Add space between items */
+    }
+
+    nav.navbar .nav-link {
+        font-size: 14px; /* Reduce font size on small screens */
+    }
+
+    nav.navbar .container-fluid {
+        flex-wrap: nowrap; /* Prevent the button from wrapping */
+    }
+
+    /* Make sure toggle button stays aligned */
+    #theme-toggle {
+        margin-left: 15px; /* Adjust margin to align properly */
     }
 
     /* Adjust toggle button size */
