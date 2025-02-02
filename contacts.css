@@ -1,62 +1,115 @@
-/*
------------------------------------------------------------
-CONTACTS SECTION - Styling
------------------------------------------------------------
-*/
-
-/* Light Theme */
+/* General styles for consistency */
 body.light-theme {
     color: #333;
 }
 
-/* Dark Theme */
 body.dark-theme {
     color: black;
 }
 
-/* Style for the CV download button */
-a.btn.btn-secondary {
-    background-color: #BFD3C1; /* Soft pastel green */
-    color: #3B4D3A; /* Muted dark green text */
-    font-size: 16px;
-    padding: 12px 24px; /* Slightly larger padding */
-    border-radius: 25px; /* Round button edges */
+.glass-card {
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent background */
+    backdrop-filter: blur(10px); /* Blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border-radius: 20px; /* Rounded corners */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Subtle border */
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1); /* Soft shadow */
+    padding: 20px; /* Adjusted padding */
+    margin: 0 auto;
+    max-width: 350px;
+    width: 100%;
+}
+
+.flip-card-container {
+    width: 100%;
+    height: 400px;
+    position: relative;
+}
+
+.flip-card {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.6s;
+}
+
+.flip-card:hover {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
     text-align: center;
-    text-decoration: none;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Soft shadow */
-    transition: background-color 0.3s ease, transform 0.2s ease;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
-a.btn.btn-secondary:hover {
-    background-color: #A8C7A0; /* Slightly darker pastel green */
-    transform: translateY(-2px); /* Slight lifting effect */
+.flip-card-front {
+    background: transparent;
 }
 
-/* Style for social media buttons */
-a.btn.btn-outline-primary,
-a.btn.btn-outline-dark {
+.flip-card-back {
+    background: transparent;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.social-links {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+}
+
+/* Common button styles */
+.social-links a {
     font-size: 16px;
     padding: 10px 20px;
-    border-radius: 30px; /* Round button edges */
+    border-radius: 30px;
     text-decoration: none;
     display: inline-flex;
     align-items: center;
     gap: 8px;
     transition: background-color 0.3s, border-color 0.3s;
-    border: 1px solid black; 
+    border: 1px solid black;  /* Default border for all buttons */
 }
 
-/* Linkedin btn */
-a.btn.btn-outline-primary:hover {
-    background-color: #BFD3C1; 
-    color: black; /
+/* Strava button style (matches the other buttons) */
+.social-links a.btn-strava {
+    color: #f04e23 important!;  /* Strava color for the text */
+    border: 1px solid #f04e23 important!;  /* Strava color for the border */
 }
 
-/* GitHub btn */
-a.btn.btn-outline-dark:hover {
-    background-color: #BFD3C1 ; 
-    color: black; 
+/* Hover effect for Strava button */
+.social-links a.btn-strava:hover {
+    background-color: #f04e23;  /* Strava color for hover background */
+    color: white;  /* Text color when hovered */
+    border-color: #f04e23;  /* Keep the border color consistent on hover */
 }
+
+/* Hover effects for other buttons */
+.social-links a.btn-outline-primary:hover {
+    background-color: #BFD3C1;
+    color: black;
+}
+
+.social-links a.btn-outline-dark:hover {
+    background-color: #BFD3C1;
+    color: black;
+}
+
+
 
 /* Style for the form */
 form .form-label {
@@ -96,6 +149,7 @@ form .btn.btn-primary:hover {
     transform: translateY(-2px); /* Lifting effect */
 }
 
+
 mark {
     background: linear-gradient(-100deg, hsla(105, 25%, 70%, .3), hsla(105, 25%, 70%, .7) 95%, hsla(105, 25%, 70%, .1));
     border-radius: 1em 0;
@@ -104,4 +158,3 @@ mark {
     margin-top: 0.2rem; /* Adds space above the highlighted text */
     margin-bottom: 0.2rem; /* Adds space below the highlighted text */
 }
-

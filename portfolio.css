@@ -103,6 +103,8 @@ PORTFOLIO SECTION - Styling
     opacity: 0.3;
 }
 
+
+
 /* Media Queries */
 @media (max-width: 768px) {
     .portfolio {

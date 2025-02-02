@@ -39,56 +39,73 @@
     <div class="row">
         <!-- Text Section on Left -->
         <div class="col-md-6 mb-5">
-            <h3 class="text-start">Let's talk! </h3>
+            <h3 class="text-start">Let's talk!</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet. Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
 
             <!-- CV Download Button -->
             <div class="mt-4">
                 <a href="path/to/your/cv.pdf" class="btn btn-secondary" download>Download My CV</a>
             </div>
-
-            <!-- New Section for Social Media Links -->
+            <!-- Social Media Links Section -->
             <div class="mt-5">
-                <h5>You can find me <mark>here</mark> too:</h5>
-                <p>Let's add each others!</p>
-                <div>
-                    <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="btn btn-outline-primary mr-2">
-                        <i class="fab fa-linkedin"></i> LinkedIn
-                    </a>
-                    <a href="https://github.com/yourprofile" target="_blank" class="btn btn-outline-dark">
-                        <i class="fab fa-github"></i> GitHub
-                    </a>
+                <div class="glass-card p-4 flip-card-container text-start">
+                    <div class="flip-card">
+                        <div class="flip-card-front">
+                            <h5>You can find me <mark>here</mark> too: </h5>
+                            <p>Let's add each other: </p>
+                        </div>
+                        <div class="flip-card-back">
+                            <h5>Or do you want to run with me?</h5>
+                            <a href="https://www.strava.com/athletes/65679332" target="_blank" class="btn btn-strava">
+                                <i class="fab fa-strava"></i> Strava
+                            </a>                          
+                        </div>
+                    </div>
+
+                    <!-- Social Media buttons below flip card -->
+                    <div class="social-links mt-4">
+                        <a href="https://www.linkedin.com/in/yourprofile" target="_blank" class="btn btn-outline-primary mr-2">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="https://github.com/yourprofile" target="_blank" class="btn btn-outline-dark">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                    </div>
                 </div>
             </div>
+
         </div>
 
         <!-- Form on Right -->
         <div class="col-md-6">
-            <h3 class="text-center mb-4">Contact Form</h3>
-            <form>
-                <div class="mb-3">
-                    <label for="name" class="form-label">Your Name</label>
-                    <input type="text" class="form-control" id="name" placeholder="Enter your name">
-                </div>
-
-                <div class="mb-3">
-                    <label for="email" class="form-label">Your Email</label>
-                    <input type="email" class="form-control" id="email" placeholder="Enter your email">
-                </div>
-
-                <div class="mb-3">
-                    <label for="message" class="form-label">Your Message</label>
-                    <textarea class="form-control" id="message" rows="4" placeholder="Write your message here"></textarea>
-                </div>
-
-                <div class="mb-3">
-                    <button type="submit" class="btn btn-primary w-100">Send Message</button>
-                </div>
-            </form>
+            <div class="glass-card p-4">
+                <h3 class="text-center mb-4">Contact Form</h3>
+                <form>
+                    <div class="mb-3">
+                        <label for="name" class="form-label">Your Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="email" class="form-label">Your Email</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                    </div>
+        
+                    <div class="mb-3">
+                        <label for="message" class="form-label">Your Message</label>
+                        <textarea class="form-control" id="message" rows="4" placeholder="Write your message here"></textarea>
+                    </div>
+        
+                    <div class="mb-3">
+                        <button type="submit" class="btn btn-primary w-100">Send Message</button>
+                    </div>
+                </form>
+            </div>
         </div>
     </div>
 </div>
 
+<!-- Footer Section -->
 <footer class="footer bg-light py-3">
     <div class="container text-center">
         <p>&copy; 2025 Sara. HandCoded with 🤍</p>
