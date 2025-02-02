@@ -14,7 +14,8 @@ h2 {
 
 /* Glass card styling */
 .glass-card {
-    background: rgba(0, 0, 0, 0.5); /* Dark semi-transparent background */
+    background: transparent;
+    
     backdrop-filter: blur(10px); /* Blur effect */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
     border-radius: 20px; /* Rounded corners */

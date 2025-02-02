@@ -21,8 +21,8 @@ CAROUSEL
 
 /* Carousel Images */
 .carousel-inner img {
-    width: 100%;
-    height: 500px; /* Fixed height */
+    width: 90%;
+    height: 450px; /* Fixed height */
     object-fit: cover; /* Ensures images fill the container without distortion */
 }
 
@@ -60,6 +60,7 @@ SLIDING TEXT
 -----------------------------------------------------------
 */
 
+/* Container for the sliding text */
 .sliding-container {
     width: 100%;
     overflow: hidden;
@@ -69,12 +70,50 @@ SLIDING TEXT
     margin-top: -5px;
 }
 
+/* The sliding text itself */
 .sliding-text {
-    font-size: 1.2rem;
+    display: inline-block;
+    white-space: nowrap;
+    font-size: 1.5rem;
     font-weight: bold;
     color: #333;
-    display: inline-block;
-    animation: slideText 20s linear infinite;
+    animation: slideText 20s linear infinite; /* Infinite scrolling animation */
+}
+
+/* -------------
+ About me
+ --------------- */
+ 
+/* General styling for the FAQ link */
+p a {
+    color: #F9E36B;  /* Warm yellow that matches your theme */
+    text-decoration: none;  /* Removes the underline for a cleaner look */
+    font-weight: bold;  /* Makes the text stand out */
+    position: relative;  /* Needed for the hover effect */
+    transition: color 0.3s ease, transform 0.3s ease;  /* Smooth transitions */
+}
+
+/* Hover effect to give it an interactive feel */
+p a:hover {
+    color: #FFD700;  /* Slightly brighter yellow on hover */
+    transform: scale(1.05);  /* Slight zoom-in effect */
+}
+
+/* Optional: Add an underline glow effect */
+p a::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #F9E36B;
+    bottom: -2px;
+    left: 0;
+    transform: scaleX(0);
+    transition: transform 0.3s ease;
+}
+
+p a:hover::after {
+    transform: scaleX(1);  /* Underline appears on hover */
 }
 
 

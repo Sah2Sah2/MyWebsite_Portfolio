@@ -12,6 +12,7 @@ Colors:
     Dark mode: #AEC6CF
 
     Buttons/Highlights: Pastel teal (light: BFD3C1 dark: A8C7A0)
+    Hover: 
 
 
 */
@@ -30,9 +31,8 @@ html {
 */
 
 body {
-    font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, 
-    "Noto Sans", "Liberation Sans", sans-serif, 
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "Jost", serif;
+    font-optical-sizing: auto;
     margin: 0;
     display: flex;
     justify-content: flex-start; 
@@ -71,6 +71,7 @@ header {
     left: 0;
     pointer-events: none;  /* Make sure it doesn't interfere with other elements */
     z-index: 1;  /* Ensure it stays behind other elements */
+   
 }
 
 /* Star effect */
@@ -94,9 +95,6 @@ header h1 {
     opacity: 1 !important; /* Explicitly set opacity to ensure it's not transparent */
     
 }
-
-
-
 
 /*
 -----------------------------------------------------------
@@ -257,6 +255,8 @@ SCROLL BAR
     background-color: #f1f1f1; /* Same color as the track */
 }
 
+
+
 /*
 -----------------------------------------------------------
   FOOTER
@@ -290,7 +290,6 @@ SCROLL BAR
 .footer-content a {
     color: black; /* Links inside footer-content remain white */
     text-decoration: none; /* Remove underline */
-    font-style: italic; /* Make the text italic */
 }
 
 

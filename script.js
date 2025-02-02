@@ -52,9 +52,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-
 // Stars creation function
-
 function createStars(numberOfStars) {
     for (var i = 0; i < numberOfStars; i++) {
         drawStars();
@@ -81,8 +79,8 @@ function animateStars() {
     var stars = document.querySelectorAll(".star");
     Array.prototype.forEach.call(stars, function(el) {
         gsap.to(el, { 
-            opacity: Math.random(), 
-            duration: Math.random() * 0.5 + 0.5, 
+            opacity: Math.random() * 0.5 + 0.2, // Adding a minimum opacity value
+            duration: Math.random() * 0.5 + 0.5,
             onComplete: animateStars
         });
     });
@@ -93,26 +91,33 @@ createStars(200);
 selectStars();
 animateStars();
 
-// Sliding text 
-
 const canvas = document.getElementById('scrollingCanvas');
 const ctx = canvas.getContext('2d');
-const text = "Scrolling Text Example";
-let x = canvas.width;
+const text = "Scrolling Text Example";  // Your text
+let x = canvas.width;  // Start off-screen to the right
+
+// Set the font and size
+ctx.font = '20px Jost, serif'; 
 
 function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-  ctx.font = '20px Arial';
-  ctx.fillStyle = 'black';
-  ctx.fillText(text, x, 30);
-  x -= 2; // Adjust speed of scrolling here
-  if (x < -ctx.measureText(text).width) {
-    x = canvas.width; // Reset position when text is out of view
+  ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the canvas
+  ctx.fillStyle = 'black';  // Set the color of the text
+  ctx.fillText(text, x, 30);  // Draw the text at position (x, 30)
+
+  // Move the text to the left (speed)
+  x -= 2;
+
+  // When the text has completely moved off the left side, reset its position to the right
+  if (x <= -ctx.measureText(text).width) {
+    x = canvas.width;  // Reset x to start from the right edge
   }
-  requestAnimationFrame(draw);
+
+  requestAnimationFrame(draw);  // Keep the loop running
 }
 
-draw();
+draw();  // Start the drawing process
+
+
 
 // FAQ
 
