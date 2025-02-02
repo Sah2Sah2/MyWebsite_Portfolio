@@ -4,8 +4,12 @@ ABOUT SECTION - Styling
 -----------------------------------------------------------
 */
 
+/*
+-----------------------------------------------------------
+CAROUSEL
+-----------------------------------------------------------
+*/
 
-/* Carousel Container */
 .carousel {
     width: 100%;
     max-width: 400px; /* Adjust for vertical layout */
@@ -50,25 +54,11 @@ ABOUT SECTION - Styling
     transform: scale(1.2); /* Slight zoom effect on hover */
 }
 
-
-/* Icons Styling */
-.tech-icon {
-    width: 2em;
-    height: 2em;
-    object-fit: contain;
-    transition: transform 0.3s ease;
-}
-
-/* Hover Effect */
-.tech-icon:hover {
-    transform: scale(1.1);
-}
-
-/* Toolkit Item */
-.toolkit-item {
-    text-align: center;
-    font-weight: bold;
-}
+/*
+-----------------------------------------------------------
+SLIDING TEXT
+-----------------------------------------------------------
+*/
 
 .sliding-container {
     width: 100%;
@@ -76,6 +66,7 @@ ABOUT SECTION - Styling
     white-space: nowrap;
     position: relative;
     height: 2rem; /* Ensure there's enough height for the text */
+    margin-top: -5px;
 }
 
 .sliding-text {
@@ -86,12 +77,17 @@ ABOUT SECTION - Styling
     animation: slideText 20s linear infinite;
 }
 
+
+/* -------------
+ Media Queries
+ --------------- */
+
 @keyframes slideText {
     from {
         transform: translateX(0);  /* Start from the right edge */
     }
     to {
-        transform: translateX(-100%);  /* Move all the way to the left */
+        transform: translateX(-100%);  
     }
 }
 
@@ -106,7 +102,14 @@ ABOUT SECTION - Styling
 @media (max-width: 480px) {
     .sliding-text {
         font-size: 0.9rem;
-        animation: slideText 40s linear infinite;  /* Even slower for very small screens */
+        animation: slideText 40s linear infinite;  
+    }
+    .carousel-inner img {
+        height: 350px; 
+    }
+
+    .carousel {
+        margin: 10px auto; 
     }
 }
 

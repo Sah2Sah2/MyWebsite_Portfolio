@@ -4,7 +4,11 @@ PORTFOLIO SECTION - Styling
 -----------------------------------------------------------
 */
 
-/* Portfolio Section Styles */
+/*
+-----------------------------------------------------------
+PORTFOLIO
+-----------------------------------------------------------
+*/
 .portfolio {
     display: flex;
     background-color: transparent !important;
@@ -15,14 +19,22 @@ PORTFOLIO SECTION - Styling
     align-items: center;
 }
 
-/* Container Adjustments */
+/*
+-----------------------------------------------------------
+CONTAINER
+-----------------------------------------------------------
+*/
 .container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 15px;
 }
 
-/* Card Style for Project (with screen-like shape) */
+/*
+-----------------------------------------------------------
+PROJECT CARD
+-----------------------------------------------------------
+*/
 .project-card {
     text-align: center;
     position: relative;
@@ -44,16 +56,16 @@ PORTFOLIO SECTION - Styling
     align-items: center;
 }
 
-/* Adjust overlay to complement the glassmorphism effect */
+/* Overlay -  glassmorphism effect */
 .project-card .overlay {
-    position: absolute; /* Ensure it covers the entire card */
+    position: absolute; 
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Make sure it stretches across the card */
+    height: 100%; 
     
-    background: rgba(0, 0, 0, 0.4); /* Slightly lighter for better glass effect */
-    backdrop-filter: blur(5px); /* Keep the blur subtle to complement the card */
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px); 
     -webkit-backdrop-filter: blur(5px);
 
     color: white;
@@ -65,9 +77,9 @@ PORTFOLIO SECTION - Styling
     text-align: center;
     transition: opacity 0.3s ease, visibility 0.3s ease;
     
-    border-radius: 15px; /* Match the card's border-radius */
-    padding: 20px; /* Added a little more padding for spacing */
-    box-sizing: border-box; /* Ensures padding doesn’t affect the overlay size */
+    border-radius: 15px; 
+    padding: 20px; 
+    box-sizing: border-box; 
 }
 
 
@@ -76,12 +88,12 @@ PORTFOLIO SECTION - Styling
     visibility: visible;
 }
 
-/* Styling for images inside project cards */
+/* Iimages inside project cards */
 .project-card img {
     height: 90%;
     width: 90%;
     object-fit: cover;
-    border-radius: 12px; /* Slight rounding on image */
+    border-radius: 12px; 
     transition: opacity 0.3s ease;
 }
 
@@ -98,14 +110,15 @@ PORTFOLIO SECTION - Styling
     text-align: center;
 }
 
-/* Ensure the image fades when hovered */
 .project-card:hover img {
     opacity: 0.3;
 }
 
 
+/* -------------
+ Media Queries
+ --------------- */
 
-/* Media Queries */
 @media (max-width: 768px) {
     .portfolio {
         padding-top: 30px;

@@ -54,10 +54,13 @@ header {
     top: 0;
     left: 0;
     z-index: 1050; /* Keep header and navbar on top */
-    background-color: #000029; /* Dark background for the header */
-    padding: 10px 0; 
-    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
+    padding: 15px 0;  /* Slightly more padding for better spacing */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for subtle lift effect */
+    backdrop-filter: blur(8px); /* Soft blur effect for a more modern, subtle look */
+    transition: background-color 0.3s ease-in-out; /* Smooth transition for color change */
 }
+
 
 /* Add a sky background (for the stars effect) */
 #sky {
@@ -290,7 +293,11 @@ SCROLL BAR
     font-style: italic; /* Make the text italic */
 }
 
-/* Adjust layout for smaller screens */
+
+/* -------------
+ Media Queries
+ --------------- */
+
 @media (max-width: 767px) {
     /* Make header text smaller for phone version */
     header h1 {

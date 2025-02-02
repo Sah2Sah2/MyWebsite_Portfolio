@@ -10,6 +10,12 @@ INDEX SECTION - Styling
     width: fit-content; /* Ensures it doesn't take full width */
 }
 
+/*
+-----------------------------------------------------------
+TEXT
+-----------------------------------------------------------
+*/
+
 .landing-text {
     position: absolute;
     top: 50%;
@@ -24,7 +30,11 @@ INDEX SECTION - Styling
     line-height: 4; /* Increase line height to create more space between lines */
 }
 
-/* Highlighted text */
+/*
+-----------------------------------------------------------
+MARK
+-----------------------------------------------------------
+*/
 mark {
     background: linear-gradient(-100deg, hsla(105, 25%, 70%, .3), hsla(105, 25%, 70%, .7) 95%, hsla(105, 25%, 70%, .1));
     border-radius: 1em 0;
@@ -33,3 +43,8 @@ mark {
     margin-top: 0.2rem; /* Adds space above the highlighted text */
     margin-bottom: 0.2rem; /* Adds space below the highlighted text */
 }
+
+
+/* -------------
+ Media Queries
+ --------------- */
