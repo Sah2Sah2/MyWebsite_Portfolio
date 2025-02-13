@@ -112,25 +112,19 @@ createStars(100);
 selectStars();
 animateStars();
 
-// Sliding text 
-const canvas = document.getElementById('scrollingCanvas');
-const ctx = canvas.getContext('2d');
-const text = "Scrolling Text Example";
-let x = canvas.width;
-// Sliding text loop
-function drawScrollingText() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
-    ctx.font = '20px Arial';
-    ctx.fillStyle = 'black';
-    ctx.fillText(text, x, 30);
-    x -= 2; // Adjust speed of scrolling here
-    if (x < -ctx.measureText(text).width) {
-      x = canvas.width; // Reset position when text is out of view
-    }
-    requestAnimationFrame(drawScrollingText); // Keep animating the text
-  }
-  drawScrollingText();
-  
+//Sliding text
+document.addEventListener("DOMContentLoaded", function () {
+    const textElement = document.getElementById("sliding-text");
+
+    textElement.addEventListener("mouseenter", () => {
+        textElement.style.animationPlayState = "paused"; // Pause the animation
+    });
+
+    textElement.addEventListener("mouseleave", () => {
+        textElement.style.animationPlayState = "running"; // Resume the animation
+    });
+});
+
 
 // FAQ
 

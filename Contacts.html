@@ -86,21 +86,21 @@
         <!-- Form on Right (Expanded to take more space) -->
         <div class="col-md-6">
             <div class="form-container glass-card p-4 d-flex flex-column h-100">
-                <h3 class="text-center mb-4">Contact Form</h3>
-                <form>
+                <h3 class="text-center mt-5">Contact Form</h3>
+                <form action="contact-form.php" method="POST">
                     <div class="mb-3">
                         <label for="name" class="form-label">Your Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" name="name" required>
                     </div>
             
                     <div class="mb-3">
                         <label for="email" class="form-label">Your Email</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email">
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" name="email" required>
                     </div>
             
                     <div class="mb-3">
                         <label for="message" class="form-label">Your Message</label>
-                        <textarea class="form-control" id="message" rows="4" placeholder="Write your message here"></textarea>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Write your message here" required></textarea>
                     </div>
             
                     <div class="mb-3">

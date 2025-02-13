@@ -157,40 +157,48 @@ FORM
 ----------------------------------------------------------- */
 
 /* Container for form */
-
 .form-container {
-    max-width: 600px;  
-    margin: 0 auto;    
-    padding: 25px 30px; 
-    background-color: rgba(255, 255, 255, 0.2); 
-    border-radius: 15px; 
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); 
+    width: 100%; /* Ensure the container takes full width */
+    max-width: 800px; /* Max width for large screens */
+    margin: 0 auto;
+    padding: 25px 30px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-sizing: border-box;
 }
 
 /* Form layout */
 form {
     display: flex;
     flex-direction: column;
-    gap: 20px; 
+    gap: 25px; /* Increased gap between fields */
+    flex-grow: 1;
 }
 
-/* Adjust input field and button width */
+/* Adjust input field size and padding */
 form .form-control {
-    width: 100%; 
-    padding: 15px; 
-    font-size: 1rem;
-    border-radius: 15px;
+    width: 100%; /* Make sure inputs take full width */
+    padding: 20px; /* Increase padding for larger input size */
+    font-size: 1.2rem; /* Larger font size for readability */
+    border-radius: 10px;
     border: 1px solid #D1D1D1;
     background-color: #F4F6F5;
     color: #5D6A6E;
     box-sizing: border-box;
+    min-height: 60px; /* Force inputs to be taller */
+    height: auto; /* Allow the input to grow vertically */
     transition: border-color 0.3s ease;
 }
 
-/* Message input */
+/* Message input (specific to the message field) */
 #message.form-control {
-    width: 400px;  
-    min-height: 120px;  
+    width: 100%;
+    min-height: 200px; /* Much taller message input */
+    padding: 20px; /* Same padding for consistency */
 }
 
 /* Focus state for inputs */
@@ -213,7 +221,7 @@ form .btn.btn-primary {
     border-color: black;
     color: #3B4D3A;
     font-size: 16px;
-    padding: 14px 24px;
+    padding: 16px 24px; /* Bigger padding for a larger button */
     border-radius: 25px;
     width: 100%;
     transition: background-color 0.3s, transform 0.2s ease;
@@ -221,44 +229,77 @@ form .btn.btn-primary {
 
 /* Button hover effect */
 form .btn.btn-primary:hover {
-    background-color: #F9E36B; 
-    transform: translateY(-2px); 
+    background-color: #F9E36B;
+    transform: translateY(-2px);
 }
 
 .mb-3 {
-    margin-bottom: 1.5rem; /* Increased margin for spacing between inputs */
+    margin-bottom: 1.5rem;
 }
 
-
 /* Media Queries for responsiveness */
+@media (max-width: 1024px) {
+    .form-container {
+        padding: 20px;
+        width: 90%;
+    }
+
+    form .form-control {
+        font-size: 1rem;
+        padding: 18px; /* Padding for medium screens */
+    }
+
+    #message.form-control {
+        min-height: 180px;
+    }
+}
+
 @media (max-width: 768px) {
     .form-container {
-        padding: 20px; /* Adjust padding for small screens */
+        padding: 15px;
+        width: 100%;
     }
 
     form {
-        gap: 15px; /* Reduce space between fields on smaller screens */
+        gap: 25px; /* Maintain gap for smaller screens */
     }
 
-    /* Ensure input fields maintain a consistent width */
     form .form-control {
-        width: 100%; /* Full width on mobile */
-        font-size: 0.95rem; /* Slightly smaller font size on smaller screens */
+        font-size: 1rem;
+        padding: 16px;
     }
 
-    /* Adjust message input field on small screens */
     #message.form-control {
         width: 100%;
-        min-height: 100px;  /* Make it smaller to fit better on mobile */
+        min-height: 160px;
     }
 
-    /* Adjust label font size on smaller screens */
     form .form-label {
-        font-size: 1rem; /* Slightly smaller font size */
+        font-size: 1rem;
     }
 
-    /* Adjust button size on smaller screens */
     form .btn.btn-primary {
-        padding: 12px 22px; /* Slightly smaller padding */
+        padding: 14px 22px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-container {
+        padding: 10px;
+        width: 100%;
+    }
+
+    form .form-control {
+        font-size: 0.9rem;
+        padding: 14px;
+    }
+
+    #message.form-control {
+        min-height: 140px;
+    }
+
+    form .btn.btn-primary {
+        padding: 12px 20px;
+        font-size: 14px;
     }
 }

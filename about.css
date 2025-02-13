@@ -61,7 +61,7 @@ SLIDING TEXT
 */
 
 /* Container for the sliding text */
-.sliding-container {
+.sliding-text-container {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
@@ -70,15 +70,41 @@ SLIDING TEXT
     margin-top: -5px;
 }
 
-/* The sliding text itself */
+/* The sliding text wrapper */
+.sliding-text-wrapper {
+    display: flex;
+    animation: slideText 20s linear infinite;
+}
+
+/* Each sliding text piece */
 .sliding-text {
     display: inline-block;
     white-space: nowrap;
     font-size: 1.5rem;
     font-weight: bold;
     color: #333;
-    animation: slideText 20s linear infinite; /* Infinite scrolling animation */
+    padding-right: 10rem; /* Space between the text pieces  */
 }
+
+/* Keyframes for sliding text */
+@keyframes slideText {
+    0% {
+        transform: translateX(100%); /* Start from the right */
+    }
+    50% {
+        transform: translateX(-50%); /* Halfway point (the first piece disappears) */
+    }
+    100% {
+        transform: translateX(-100%); /* End at the left */
+    }
+}
+
+/* Pause animation on hover */
+.sliding-text-container:hover .sliding-text-wrapper {
+    animation-play-state: paused;
+}
+
+
 
 /* -------------
  About me
