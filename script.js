@@ -52,6 +52,9 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
+// Ensure GSAP is included (place this in your HTML head if not already included)
+
+
 // Stars creation function
 function createStars(numberOfStars) {
     for (var i = 0; i < numberOfStars; i++) {
@@ -60,64 +63,74 @@ function createStars(numberOfStars) {
 }
 
 // Function to create and position stars
-function drawStars(){
+function drawStars() {
     var tmpStar = document.createElement('figure');
     tmpStar.className = "star";
+    
+    // Randomize the size of the stars for more variety
+    var size = Math.random() * 3 + 1;  // Random size between 1px and 4px
+    tmpStar.style.width = `${size}px`;
+    tmpStar.style.height = `${size}px`;
+    
+    // Random positions
     tmpStar.style.top = Math.random() * 100 + '%';  // Random top position
     tmpStar.style.left = Math.random() * 100 + '%'; // Random left position
+    
     document.getElementById('sky').appendChild(tmpStar);  // Append to #sky
 }
 
 // Function to select all stars
 function selectStars() {
     var stars = document.querySelectorAll(".star");
-    console.log(stars); // This will log all the stars to the console
+    return stars;
 }
 
 // Animate stars (this should not affect the h1 element)
 function animateStars() {
-    var stars = document.querySelectorAll(".star");
+    var stars = selectStars();
+    
     Array.prototype.forEach.call(stars, function(el) {
         gsap.to(el, { 
             opacity: Math.random() * 0.5 + 0.2, // Adding a minimum opacity value
-            duration: Math.random() * 0.5 + 0.5,
-            onComplete: animateStars
+            duration: Math.random() * 0.5 + 0.5, // Random duration
+            repeat: -1, // Makes the animation repeat indefinitely
+            yoyo: true, // Ensures the animation reverses (makes the fade effect smooth)
         });
     });
 }
 
+// Create and animate stars once the page is loaded
+window.onload = function() {
+    createStars(100); // Create 100 stars (you can change this number)
+    animateStars();   // Animate the stars
+}
+
+
+
 // Initialize stars and animation
-createStars(200);
+createStars(100);
 selectStars();
 animateStars();
 
+// Sliding text 
 const canvas = document.getElementById('scrollingCanvas');
 const ctx = canvas.getContext('2d');
-const text = "Scrolling Text Example";  // Your text
-let x = canvas.width;  // Start off-screen to the right
-
-// Set the font and size
-ctx.font = '20px Jost, serif'; 
-
-function draw() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);  // Clear the canvas
-  ctx.fillStyle = 'black';  // Set the color of the text
-  ctx.fillText(text, x, 30);  // Draw the text at position (x, 30)
-
-  // Move the text to the left (speed)
-  x -= 2;
-
-  // When the text has completely moved off the left side, reset its position to the right
-  if (x <= -ctx.measureText(text).width) {
-    x = canvas.width;  // Reset x to start from the right edge
+const text = "Scrolling Text Example";
+let x = canvas.width;
+// Sliding text loop
+function drawScrollingText() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height); // Clear the canvas
+    ctx.font = '20px Arial';
+    ctx.fillStyle = 'black';
+    ctx.fillText(text, x, 30);
+    x -= 2; // Adjust speed of scrolling here
+    if (x < -ctx.measureText(text).width) {
+      x = canvas.width; // Reset position when text is out of view
+    }
+    requestAnimationFrame(drawScrollingText); // Keep animating the text
   }
-
-  requestAnimationFrame(draw);  // Keep the loop running
-}
-
-draw();  // Start the drawing process
-
-
+  drawScrollingText();
+  
 
 // FAQ
 

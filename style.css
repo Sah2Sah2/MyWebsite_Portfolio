@@ -71,17 +71,16 @@ header {
     left: 0;
     pointer-events: none;  /* Make sure it doesn't interfere with other elements */
     z-index: 1;  /* Ensure it stays behind other elements */
-   
 }
 
 /* Star effect */
 .star {
-    box-shadow: 0px 0px 1px 1px rgba(255, 255, 255, 0.4);
     position: absolute;
-    width: 1px;
-    height: 1px;
-    border-radius: 2px;
+    width: 2px;
+    height: 2px;
+    border-radius: 50%; /* More natural circular stars */
     background-color: white;
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4); /* Glow effect */
 }
 
 /* Project name styling */
@@ -93,7 +92,6 @@ header h1 {
     position: relative; /* Ensure it stays in the document flow */
     z-index: 2; /* Ensure the text stays above the stars */
     opacity: 1 !important; /* Explicitly set opacity to ensure it's not transparent */
-    
 }
 
 /*

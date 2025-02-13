@@ -15,8 +15,10 @@ document.body.appendChild(renderer.domElement);
 // Load Moon texture
 const textureLoader = new THREE.TextureLoader();
 const moonTexture = textureLoader.load('textures/2k_moon.jpg');  
+
 // Create Moon sphere
-const geometry = new THREE.SphereGeometry(15, 50, 50);  
+const geometry = new THREE.SphereGeometry(15, 20, 20); // Lower segments for better performance
+
 const material = new THREE.MeshBasicMaterial({ map: moonTexture });
 const sphere = new THREE.Mesh(geometry, material);
 scene.add(sphere);
@@ -30,9 +32,11 @@ window.addEventListener('resize', () => {
     camera.aspect = window.innerWidth / window.innerHeight;
     camera.updateProjectionMatrix();
 });
+
 // Render function
 function animate() {
-    requestAnimationFrame(animate);
+    renderer.setAnimationLoop(animate); // This is more optimized for Three.js
+
     sphere.rotation.y += 0.001;
     renderer.render(scene, camera);
 }
