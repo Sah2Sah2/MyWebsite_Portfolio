@@ -37,7 +37,7 @@ window.addEventListener('resize', () => {
 function animate() {
     renderer.setAnimationLoop(animate); // This is more optimized for Three.js
 
-    sphere.rotation.y += 0.001;
+    sphere.rotation.y += 0.002;
     renderer.render(scene, camera);
 }
 animate();

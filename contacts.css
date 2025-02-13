@@ -173,29 +173,31 @@ FORM
 
 /* Form layout */
 form {
+    width: 80%;
     display: flex;
     flex-direction: column;
-    gap: 25px; /* Increased gap between fields */
+    gap: 5px; 
     flex-grow: 1;
 }
 
 /* Adjust input field size and padding */
 form .form-control {
     width: 100%; /* Make sure inputs take full width */
-    padding: 20px; /* Increase padding for larger input size */
+    padding: 15px; /* Increase padding for larger input size */
     font-size: 1.2rem; /* Larger font size for readability */
     border-radius: 10px;
     border: 1px solid #D1D1D1;
     background-color: #F4F6F5;
     color: #5D6A6E;
     box-sizing: border-box;
-    min-height: 60px; /* Force inputs to be taller */
+    min-height: 40px; /* Force inputs to be taller */
     height: auto; /* Allow the input to grow vertically */
     transition: border-color 0.3s ease;
 }
 
 /* Message input (specific to the message field) */
 #message.form-control {
+
     width: 100%;
     min-height: 200px; /* Much taller message input */
     padding: 20px; /* Same padding for consistency */

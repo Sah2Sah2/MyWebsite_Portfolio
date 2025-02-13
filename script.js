@@ -51,10 +51,6 @@ document.addEventListener("DOMContentLoaded", function () {
     document.body.style.paddingTop = navbarHeight + 'px'; // Dynamically apply the top padding
 });
 
-
-// Ensure GSAP is included (place this in your HTML head if not already included)
-
-
 // Stars creation function
 function createStars(numberOfStars) {
     for (var i = 0; i < numberOfStars; i++) {
@@ -105,12 +101,11 @@ window.onload = function() {
     animateStars();   // Animate the stars
 }
 
-
-
 // Initialize stars and animation
-createStars(100);
+createStars(150);
 selectStars();
 animateStars();
+
 
 //Sliding text
 document.addEventListener("DOMContentLoaded", function () {

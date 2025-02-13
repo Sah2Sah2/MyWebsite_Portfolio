@@ -17,6 +17,8 @@ PORTFOLIO
     background: transparent;
     justify-content: center;
     align-items: center;
+    padding: 20px;
+
 }
 
 /*
@@ -35,6 +37,10 @@ CONTAINER
 PROJECT CARD
 -----------------------------------------------------------
 */
+.row {
+    padding-left: 15px;
+    padding-right: 15px;
+}
 .project-card {
     text-align: center;
     position: relative;
@@ -54,6 +60,8 @@ PROJECT CARD
     display: flex;
     justify-content: center;
     align-items: center;
+
+    padding: 15px;
 }
 
 /* Overlay -  glassmorphism effect */
