@@ -26,6 +26,10 @@ CAROUSEL
     object-fit: cover; /* Ensures images fill the container without distortion */
 }
 
+.carousel-inner .carousel-item .carousel-caption p {
+    color: white !important;
+}
+
 
 /* Remove Hover Overlay on Controls */
 .carousel-control-prev,
@@ -66,14 +70,15 @@ SLIDING TEXT
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    height: 2rem; /* Ensure there's enough height for the text */
-    margin-top: -5px;
+    height: 2.5rem; /* Ensure there's enough height for the text */
+    margin-top: -30px;
+    background-color: rgba(240, 240, 240, 0.3); 
 }
 
 /* The sliding text wrapper */
 .sliding-text-wrapper {
     display: flex;
-    animation: slideText 20s linear infinite;
+    animation: slideText 30s linear infinite;
 }
 
 /* Each sliding text piece */
@@ -104,28 +109,90 @@ SLIDING TEXT
     animation-play-state: paused;
 }
 
-
-
 /* -------------
  About me
  --------------- */
- 
+h1, h2, p {
+    font-size: clamp(14px, 2vw, 24px); /* Responsive text size */
+}
+
+.about-me {
+    position: relative;
+    z-index: 2; /* Ensures it's above other elements */
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Adds depth */
+    text-align: left;
+    margin-top: 80px;
+    max-height: none; /* Prevents a fixed max-height */
+    overflow: visible; /* Ensures no scrolling inside the box */
+}
+
+.about-me h2 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    text-transform: uppercase;
+}
+
+.about-me p {
+    font-size: 1.1rem;
+    line-height: 1.4;
+    color: #444;
+}
+
+.about-me a {
+    font-weight: bold;
+    color: #F5A7A1;
+    text-decoration: none;
+}
+
+.about-me a:hover {
+    text-decoration: underline;
+}
+
+.about-me::after {
+    content: "";
+    position: absolute;
+    top: -10px;
+    left: -10px;
+    right: -10px;
+    bottom: -10px;
+    background: radial-gradient(circle, rgba(255,255,255,0.5) 10%, rgba(255,255,255,0) 80%);
+    z-index: -1;
+    border-radius: 15px;
+}
+
+/* Custom underline for the specific word */
+.wavy-underline {
+    text-decoration: underline;
+    text-decoration-color: #F5A7A1;            
+    text-decoration-style: wavy;               
+    color: #333;                             
+} 
+  .wavy-underline:hover {
+    text-decoration-color: #F9E36B;           
+}
+  
+  
+
 /* General styling for the FAQ link */
 p a {
-    color: #F9E36B;  /* Warm yellow that matches your theme */
-    text-decoration: none;  /* Removes the underline for a cleaner look */
-    font-weight: bold;  /* Makes the text stand out */
-    position: relative;  /* Needed for the hover effect */
-    transition: color 0.3s ease, transform 0.3s ease;  /* Smooth transitions */
+    color: #F5A7A1 important!;  
+    text-decoration: none;  
+    font-weight: bold;  
+    position: relative;  
+    transition: color 0.3s ease, transform 0.3s ease;  
 }
 
-/* Hover effect to give it an interactive feel */
+/* Hover effect */
 p a:hover {
-    color: #FFD700;  /* Slightly brighter yellow on hover */
-    transform: scale(1.05);  /* Slight zoom-in effect */
+    color: #F9E36B;  
+    transform: scale(1.05);  
 }
 
-/* Optional: Add an underline glow effect */
+/* Underline glow effect */
 p a::after {
     content: '';
     position: absolute;
@@ -139,36 +206,51 @@ p a::after {
 }
 
 p a:hover::after {
-    transform: scaleX(1);  /* Underline appears on hover */
-}
-
-
-/* -------------
- Media Queries
- --------------- */
-
-@keyframes slideText {
-    from {
-        transform: translateX(0);  /* Start from the right edge */
-    }
-    to {
-        transform: translateX(-100%);  
-    }
+    transform: scaleX(1);  
 }
 
 /* Responsive adjustments */
+
 @media (max-width: 768px) {
+    .about-me h2 {
+        font-size: 1.5rem; /* Smaller font size for the title on smaller screens */
+    }
+
+    .about-me p {
+        font-size: 1rem; /* Reduce the font size of the paragraph */
+    }
+
     .sliding-text {
         font-size: 1rem;
-        animation: slideText 30s linear infinite;  /* Slow down */
+        animation: slideText 40s linear infinite;  /* Slow down */
+    }
+
+    /* Adjust sliding text container height to accommodate text size */
+    .sliding-text-container {
+        height: 3rem; /* Increase height for readability */
     }
 }
 
 @media (max-width: 480px) {
+
+    .about-me h2 {
+        font-size: 1.2rem; /* Further reduce font size on very small screens */
+    }
+
+    .about-me p {
+        font-size: 0.9rem; /* Further reduce the font size of the paragraph */
+    }
+
     .sliding-text {
         font-size: 0.9rem;
-        animation: slideText 40s linear infinite;  
+        animation: slideText 50s linear infinite;  
     }
+
+    /* Adjust sliding text container height further for smaller screens */
+    .sliding-text-container {
+        height: 3.5rem; /* Increase height further for smaller screens */
+    }
+
     .carousel-inner img {
         height: 350px; 
     }
@@ -177,4 +259,3 @@ p a:hover::after {
         margin: 10px auto; 
     }
 }
-

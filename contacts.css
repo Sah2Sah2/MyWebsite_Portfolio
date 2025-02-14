@@ -8,6 +8,77 @@ body.dark-theme {
 }
 
 /* -----------------------------------------------------------
+LET'S TALK
+----------------------------------------------------------- */
+.col-md-6.mb-5 h3 {
+    font-size: 2rem;                      /* Larger font size */
+    font-weight: bold;                    /* Bold for emphasis */
+    color: #F9E36B;                       /* Yellow color */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);  /* Subtle shadow for depth */
+    transition: color 0.3s ease, text-shadow 0.3s ease; /* Smooth color and shadow transition */
+}
+
+/* Bounce effect for hover */
+.col-md-6.mb-5 h3:hover {
+    animation: bounce 0.5s ease;          /* Apply bounce animation */
+    color: #F5A7A1;                       /* Change color on hover */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); /* Enhanced shadow on hover */
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);           /* Start from normal position */
+    }
+    30% {
+        transform: translateY(-10px);       /* Move up */
+    }
+    50% {
+        transform: translateY(5px);         /* Move slightly down */
+    }
+    70% {
+        transform: translateY(-3px);        /* Move up a bit */
+    }
+    100% {
+        transform: translateY(0);           /* Return to normal position */
+    }
+}
+
+/* Styling for the LIA text */
+.lia-tooltip {
+    position: relative;
+    cursor: pointer;
+    color: #F9E36B;  /* Yellow color for emphasis */
+}
+
+/* Tooltip text (hidden by default) */
+.tooltip-text {
+    visibility: hidden;
+    width: 200px; /* Adjust the width as needed */
+    background-color: #F5A7A1; /* Dark background */
+    color: #fff; /* White text */
+    text-align: center;
+    padding: 5px 10px;
+    border-radius: 5px;
+    position: absolute;
+    z-index: 1;
+    top: 125%;  /* Position above the LIA text */
+    left: 50%;
+    margin-left: -100px; /* Adjust for centered placement */
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+/* Show the tooltip text on hover */
+.lia-tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+    transition: opacity 0.3s ease-in-out;
+}
+
+
+
+/* -----------------------------------------------------------
 CV BUTTON
 ----------------------------------------------------------- */
 a.btn.btn-secondary {
@@ -283,6 +354,14 @@ form .btn.btn-primary:hover {
     form .btn.btn-primary {
         padding: 14px 22px;
     }
+    .tooltip-text {
+        width: 150px; /* Smaller width for smaller screens */
+        left: 50%;
+        margin-left: -75px; /* Adjust to center the tooltip */
+        font-size: 12px; /* Smaller font size */
+        top: 100%; /* Reduce top value to avoid overflow */
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -303,5 +382,12 @@ form .btn.btn-primary:hover {
     form .btn.btn-primary {
         padding: 12px 20px;
         font-size: 14px;
+    }
+    .tooltip-text {
+        width: 120px; /* Even smaller width */
+        font-size: 10px; /* Smaller font size */
+        left: 50%;
+        margin-left: -60px; /* Adjust for centering */
+        top: 95%; /* Slightly adjust the position */
     }
 }
