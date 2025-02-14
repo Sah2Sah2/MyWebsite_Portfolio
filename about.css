@@ -10,8 +10,10 @@ CAROUSEL
 -----------------------------------------------------------
 */
 
-.container, .carousel, .about-me {
-    margin-bottom: 40px; 
+body { 
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; 
 }
 
 .carousel {
@@ -68,19 +70,24 @@ SLIDING TEXT
 
 /* Container for the sliding text */
 .sliding-text-container {
-    width: 100%;
+    width: 100%; /* Full width inside about-me section */
+    margin: 0 auto; /* Centered horizontally */
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    height: 2.5rem; 
-    margin-top: -30px;
-    background-color: rgba(240, 240, 240, 0.3); 
+    height: 2.5rem; /* Adjust height based on preference */
+    background-color: rgba(240, 240, 240, 0.3); /* Optional background */
+    display: flex;
+    align-items: center; /* Center text vertically */
 }
 
 /* The sliding text wrapper */
 .sliding-text-wrapper {
     display: flex;
-    animation: slideText 30s linear infinite;
+    animation: slideText 28s linear infinite;
+    width: 100%; 
+    padding-right: 10px;
+    will-change: transform;
 }
 
 /* Each sliding text piece */
@@ -91,15 +98,13 @@ SLIDING TEXT
     font-weight: bold;
     color: #333;
     padding-right: 10rem; 
+
 }
 
 /* Keyframes for sliding text */
 @keyframes slideText {
     0% {
         transform: translateX(100%); 
-    }
-    50% {
-        transform: translateX(-50%); 
     }
     100% {
         transform: translateX(-100%); 
@@ -119,18 +124,13 @@ h1, h2, p {
 }
 
 .about-me {
-    position: relative;
-    z-index: 2; 
-    background-color: rgba(255, 255, 255, 0.2);
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    text-align: left;
-    margin-top: 80px;
-    max-height: none; 
-    overflow: visible; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: calc(100vh - 100px); /* ensures the content takes up the available space */
+    padding-top: 80px;
+    padding-bottom: 80px; /* to add some breathing space */
 }
-
 .about-me h2 {
     font-size: 2rem;
     font-weight: bold;
