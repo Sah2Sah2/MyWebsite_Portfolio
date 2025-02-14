@@ -1,30 +1,30 @@
 document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;
-    const themeToggleBtn = document.getElementById("theme-toggle"); // Ensure this is your theme toggle button
-    const moonIcon = document.getElementById("theme-toggle"); // Using a single element for the moon icon
+    const themeToggleBtn = document.getElementById("theme-toggle");
+    const moonIcon = document.getElementById("theme-toggle"); 
 
     // Function to toggle the theme
     function toggleTheme(isLightTheme) {
         if (isLightTheme) {
             // Light theme settings
-            body.style.backgroundColor = '#d3c8e0';  // Light theme background color
+            body.style.backgroundColor = '#d3c8e0';  
             if (typeof scene !== 'undefined') {
-                scene.background = new THREE.Color(0xd3c8e0); // Light theme for Three.js scene
+                scene.background = new THREE.Color(0xd3c8e0); 
             }
             body.classList.add('light-theme');
             body.classList.remove('dark-theme');
-            moonIcon.textContent = '🌕'; // Light theme emoji
-            localStorage.setItem("theme", "light-theme"); // Save light theme in localStorage
+            moonIcon.textContent = '🌕'; 
+            localStorage.setItem("theme", "light-theme"); 
         } else {
             // Dark theme settings
-            body.style.backgroundColor = '#AEC6CF';  // Dark theme background color (pastel blue)
+            body.style.backgroundColor = '#AEC6CF'; 
             if (typeof scene !== 'undefined') {
-                scene.background = new THREE.Color(0xAEC6CF); // Dark theme for Three.js scene
+                scene.background = new THREE.Color(0xAEC6CF); 
             }
             body.classList.add('dark-theme');
             body.classList.remove('light-theme');
-            moonIcon.textContent = '🌕'; // Dark theme emoji (same emoji used)
-            localStorage.setItem("theme", "dark-theme"); // Save dark theme in localStorage
+            moonIcon.textContent = '🌕'; 
+            localStorage.setItem("theme", "dark-theme"); 
         }
     }
 
@@ -46,9 +46,8 @@ document.addEventListener("DOMContentLoaded", function () {
         toggleTheme(true); // Default to light theme
     };
 
-    // Optional: Dynamically add padding to body if there's a header
     var navbarHeight = document.querySelector('header') ? document.querySelector('header').offsetHeight : 0;
-    document.body.style.paddingTop = navbarHeight + 'px'; // Dynamically apply the top padding
+    document.body.style.paddingTop = navbarHeight + 'px'; 
 });
 
 // Stars creation function
@@ -81,24 +80,24 @@ function selectStars() {
     return stars;
 }
 
-// Animate stars (this should not affect the h1 element)
+// Animate stars 
 function animateStars() {
     var stars = selectStars();
     
     Array.prototype.forEach.call(stars, function(el) {
         gsap.to(el, { 
-            opacity: Math.random() * 0.5 + 0.2, // Adding a minimum opacity value
-            duration: Math.random() * 0.5 + 0.5, // Random duration
-            repeat: -1, // Makes the animation repeat indefinitely
-            yoyo: true, // Ensures the animation reverses (makes the fade effect smooth)
+            opacity: Math.random() * 0.5 + 0.2, 
+            duration: Math.random() * 0.5 + 0.5, 
+            repeat: -1,
+            yoyo: true, 
         });
     });
 }
 
 // Create and animate stars once the page is loaded
 window.onload = function() {
-    createStars(100); // Create 100 stars (you can change this number)
-    animateStars();   // Animate the stars
+    createStars(150); // Create 100 stars 
+    animateStars();  
 }
 
 // Initialize stars and animation
@@ -122,7 +121,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 // FAQ
-
 const toggles = document.querySelectorAll('.faq-toggle');
 
 toggles.forEach(toggle => {

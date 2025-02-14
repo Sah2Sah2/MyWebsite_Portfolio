@@ -1,11 +1,16 @@
 /* Ensure the body has a bit of padding at the top to accommodate the fixed header */
 body {
-    padding-top: 80px;
+    padding-top: 60px;
+}
+
+.container {
+    padding: 20px 20px 20px 20px;
+    margin-top: 0;
 }
 
 /* Center-align h2 and add some spacing */
 h2 {
-    margin: 50px 0 30px;
+    margin: 20px 0 30px;
     text-align: center;
     font-size: 2rem;
 }
@@ -159,4 +164,12 @@ h2 {
 /* Accordion styling */
 .accordion {
     box-shadow: none;
+}
+
+
+@media (max-width: 768px) {
+    
+    body {
+        padding-top: 50px; /* Adjust the padding for smaller screens */
+    }
 }

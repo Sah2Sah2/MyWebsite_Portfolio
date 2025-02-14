@@ -191,7 +191,7 @@ button#theme-toggle {
 
 #theme-toggle:focus, 
 #theme-toggle:active {
-    outline: none important!; 
+    outline: none !important; 
     box-shadow: none; 
     border: none;
 }

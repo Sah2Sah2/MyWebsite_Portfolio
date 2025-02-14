@@ -5,9 +5,9 @@ INDEX SECTION - Styling
 */
 
 .content {
-    margin-left: 50px !important; /* Adjust value as needed */
+    margin-left: 50px !important; 
     text-align: left !important;
-    width: fit-content; /* Ensures it doesn't take full width */
+    width: fit-content; 
 }
 
 /*
@@ -25,29 +25,15 @@ TEXT
     font-size: 2rem;
     text-align: center;
     padding: 20px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     width: 100%;
-    line-height: 4; /* Increase line height to create more space between lines */
+    line-height: 4; 
 }
 
 /*
 -----------------------------------------------------------
-MARK
+UNDERLINE + BUTTONS
 -----------------------------------------------------------
 */
-mark {
-    background: linear-gradient(
-        -100deg, 
-        hsla(51, 92%, 70%, 0.3),  /* Lighter transparent start */
-        hsla(51, 92%, 70%, 0.7) 95%,  /* Stronger color in the middle */
-        hsla(51, 92%, 70%, 0.1)  /* Fading towards the end */
-    );
-    border-radius: 1em 0;
-    padding: .5rem;
-    display: inline-block; /* Ensures the mark behaves like text */
-    margin-top: 0.2rem; /* Adds space above the highlighted text */
-    margin-bottom: 0.2rem; /* Adds space below the highlighted text */
-}
 
 /* Custom underline for the specific word */
 .wavy-underline {
@@ -80,57 +66,47 @@ mark {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: transparent; 
-    border: 2px solid #ccc; 
-    outline: none; /* Remove outline */
+    background-color: transparent;  
+    outline: none; 
     color: inherit;
 }
 
-/* Remove underline for links inside buttons */
 .button a {
-    text-decoration: none; /* Ensures no underline on links inside the button */
+    text-decoration: none; 
 }
 
-/* Adjust the icon margin */
 .button i {
     margin: 0;
 }
 
-/* Individual button styles */
 .linkedin-button {
-    color: #0077b5; /* LinkedIn color */
+    color: #0077b5; 
 }
 
 .github-button {
-    color: #333; /* GitHub color */
+    color: #333; 
 }
 
 .faq-button {
-    color: #F9E36B; /* Custom color for FAQ button */
+    color: #F9E36B; 
 }
 
-/* Hover effect */
 .button:hover {
-    transform: scale(1.2) rotate(10deg); /* Scale up and tilt (rotate) the button */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+    transform: scale(1.2) rotate(10deg); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
 }
 
-/* LinkedIn icon hover effect */
 .linkedin-button:hover {
-    color: #005582; /* Darker LinkedIn hover color */
+    color: #005582; 
 }
 
-/* GitHub icon hover effect */
 .github-button:hover {
-    color: #444; /* Darker GitHub hover color */
+    color: #444; 
 }
 
-/* FAQ icon hover effect */
 .faq-button:hover {
-    color: #F5A7A1; /* Lighter FAQ hover color */
+    color: #F5A7A1; 
 }
-
-
 
 /* -------------
  Media Queries

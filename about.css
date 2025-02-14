@@ -62,6 +62,19 @@ body {
     transform: scale(1.2); 
 }
 
+/* Carousel Captions */
+.carousel-caption {
+    position: absolute;
+    bottom: 10%;
+    left: 10%;
+    right: 10%;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    font-size: 1.5rem; 
+    display: block; 
+    z-index: 10; 
+}
+
 /*
 -----------------------------------------------------------
 SLIDING TEXT
@@ -70,15 +83,15 @@ SLIDING TEXT
 
 /* Container for the sliding text */
 .sliding-text-container {
-    width: 100%; /* Full width inside about-me section */
-    margin: 0 auto; /* Centered horizontally */
+    width: 100%; 
+    margin: 0 auto; 
     overflow: hidden;
     white-space: nowrap;
     position: relative;
-    height: 2.5rem; /* Adjust height based on preference */
-    background-color: rgba(240, 240, 240, 0.3); /* Optional background */
+    height: 2.5rem; 
+    background-color: rgba(240, 240, 240, 0.3); 
     display: flex;
-    align-items: center; /* Center text vertically */
+    align-items: center;
 }
 
 /* The sliding text wrapper */
@@ -123,19 +136,88 @@ h1, h2, p {
     font-size: clamp(14px, 2vw, 24px); 
 }
 
+/* About Me Heading (h1) Style */
+.about-me h1 {
+    font-size: 1.8rem; 
+    font-weight: bold;
+    color: #F9E36B; 
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); 
+    transition: color 0.3s ease, text-shadow 0.3s ease; 
+}
+
+/* Bounce effect for hover */
+.about-me h1:hover {
+    animation: bounce 0.5s ease;
+    color: #F5A7A1; 
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6); 
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    70% {
+        transform: translateY(-3px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+/* My toolkit Heading (h3) Style */
+.about-me h3 {
+    font-size: 1.6rem; 
+    font-weight: normal; 
+    color: #F9E36B;  
+    text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); 
+    transition: color 0.3s ease, text-shadow 0.3s ease, text-decoration 0.3s ease;
+    text-decoration: none; 
+}
+
+/* Hover effect: Add wavy underline */
+.about-me h3:hover {
+    animation: bounce 0.5s ease; 
+    color: #F5A7A1; 
+    text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.6); 
+    text-decoration: underline;
+    text-decoration-color: #F5A7A1; 
+    text-decoration-style: wavy; 
+    text-underline-offset: 6px; 
+}
+
+/* Bounce animation */
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-5px); 
+    }
+    50% {
+        transform: translateY(3px); 
+    }
+    70% {
+        transform: translateY(-2px); 
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 .about-me {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: calc(100vh - 100px); /* ensures the content takes up the available space */
+    min-height: calc(100vh - 100px); 
     padding-top: 80px;
-    padding-bottom: 80px; /* to add some breathing space */
-}
-.about-me h2 {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #333;
-    text-transform: uppercase;
+    padding-bottom: 80px; 
 }
 
 .about-me p {
@@ -151,7 +233,7 @@ h1, h2, p {
 }
 
 .about-me a:hover {
-    text-decoration: underline;
+    text-decoration-color: #F5A7A1;
 }
 
 .about-me::after {
@@ -231,6 +313,12 @@ p a:hover::after {
     .sliding-text {
         font-size: 1rem;
     }
+    
+    .carousel-caption {
+        bottom: 15%;
+        font-size: 1.2rem; /* Adjust font size for better visibility */
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -258,6 +346,11 @@ p a:hover::after {
 
     .carousel {
         margin: 10px auto; 
+    }
+
+    .carousel-caption {
+        bottom: 20%;
+        font-size: 1rem;
     }
 }
 

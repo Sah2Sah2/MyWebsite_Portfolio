@@ -319,7 +319,10 @@ form .btn.btn-primary:hover {
     margin-bottom: 1.5rem;
 }
 
-/* Media Queries for responsiveness */
+/* -------------
+ Media Queries
+ --------------- */
+ 
 @media (max-width: 1024px) {
     .form-container {
         padding: 18px;
