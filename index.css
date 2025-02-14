@@ -62,6 +62,75 @@ mark {
     text-underline-offset: 6px;         
 }
 
+/* Style the buttons */
+.button-container {
+    display: flex;
+    gap: 15px; 
+    margin-top: 20px; 
+}
+
+.button {
+    padding: 10px;
+    font-size: 1.6rem; 
+    text-align: center;
+    text-decoration: none;
+    border-radius: 50%; 
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent; 
+    border: 2px solid #ccc; 
+    outline: none; /* Remove outline */
+    color: inherit;
+}
+
+/* Remove underline for links inside buttons */
+.button a {
+    text-decoration: none; /* Ensures no underline on links inside the button */
+}
+
+/* Adjust the icon margin */
+.button i {
+    margin: 0;
+}
+
+/* Individual button styles */
+.linkedin-button {
+    color: #0077b5; /* LinkedIn color */
+}
+
+.github-button {
+    color: #333; /* GitHub color */
+}
+
+.faq-button {
+    color: #F9E36B; /* Custom color for FAQ button */
+}
+
+/* Hover effect */
+.button:hover {
+    transform: scale(1.2) rotate(10deg); /* Scale up and tilt (rotate) the button */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle shadow effect */
+}
+
+/* LinkedIn icon hover effect */
+.linkedin-button:hover {
+    color: #005582; /* Darker LinkedIn hover color */
+}
+
+/* GitHub icon hover effect */
+.github-button:hover {
+    color: #444; /* Darker GitHub hover color */
+}
+
+/* FAQ icon hover effect */
+.faq-button:hover {
+    color: #F5A7A1; /* Lighter FAQ hover color */
+}
+
+
 
 /* -------------
  Media Queries

@@ -211,7 +211,9 @@ p a:hover::after {
     transform: scaleX(1);  
 }
 
-/* Responsive adjustments */
+/* -------------
+ Media Queries
+ --------------- */
 
 @media (max-width: 768px) {
     .about-me h2 {
@@ -222,13 +224,12 @@ p a:hover::after {
         font-size: 1rem; 
     }
 
-    .sliding-text {
-        font-size: 1rem;
-        animation: slideText 40s linear infinite;  
+    .sliding-text-wrapper {
+        animation: slideText 20s linear infinite;  
     }
 
-    .sliding-text-container {
-        height: 2.5rem; 
+    .sliding-text {
+        font-size: 1rem;
     }
 }
 
@@ -242,13 +243,13 @@ p a:hover::after {
         font-size: 0.9rem; 
     }
 
-    .sliding-text {
-        font-size: 0.9rem;
-        animation: slideText 50s linear infinite;  
+    .sliding-text-wrapper {
+        animation: slideText 20s linear infinite; 
     }
 
-    .sliding-text-container {
-        height: 2.5rem; 
+    .sliding-text {
+        font-size: 0.9rem;
+      
     }
 
     .carousel-inner img {
@@ -259,3 +260,4 @@ p a:hover::after {
         margin: 10px auto; 
     }
 }
+
