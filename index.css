@@ -49,6 +49,19 @@ mark {
     margin-bottom: 0.2rem; /* Adds space below the highlighted text */
 }
 
+/* Custom underline for the specific word */
+.wavy-underline {
+    text-decoration: underline;
+    text-decoration-color: #F9E36B;       
+    text-decoration-style: wavy;               
+    color: #333;    
+    text-underline-offset: 6px;                        
+} 
+  .wavy-underline:hover {
+    text-decoration-color: #F5A7A1; 
+    text-underline-offset: 6px;         
+}
+
 
 /* -------------
  Media Queries

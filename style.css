@@ -2,7 +2,7 @@
 -----------------------------------------------------------
 GENERAL Styling
 -----------------------------------------------------------
-Font: SEGOE UI 
+Font: Jost, Serif
 Font size: 
     h1:
     Footer: 1rem
@@ -23,12 +23,6 @@ Colors:
 -----------------------------------------------------------
 */
 
-/*
-html {
-    font-size: 62.5%;
-    scroll-behavior: smooth;
-}
-*/
 
 body {
     font-family: "Jost", serif;
@@ -41,36 +35,34 @@ body {
     overflow: auto; 
     position: relative;
     padding-top: 100px;
-    padding-bottom: 40px; /* Adds space for the footer */
-    min-height: 100vh; /* Ensure content fills the screen without being cut off */
+    padding-bottom: 40px; 
+    min-height: 100vh; 
     opacity: 1 important!;
 }
 
-
-/* Make sure the header has the correct styling */
 header {
     width: 100%;
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 1050; /* Keep header and navbar on top */
-    background-color: rgba(0, 0, 0, 0.7); /* Black background with 70% opacity */
-    padding: 15px 0;  /* Slightly more padding for better spacing */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for subtle lift effect */
-    backdrop-filter: blur(8px); /* Soft blur effect for a more modern, subtle look */
-    transition: background-color 0.3s ease-in-out; /* Smooth transition for color change */
+    z-index: 1050; 
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 15px 0;  
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(8px); 
+    transition: background-color 0.3s ease-in-out; 
 }
 
 
-/* Add a sky background (for the stars effect) */
+/* Add a sky background */
 #sky {
-    height: 100%;  /* Ensure it takes up the full height of the header */
-    position: absolute; /* Make sure it covers the entire header */
-    width: 100%;  /* Make it span the full width of the header */
+    height: 100%;  
+    position: absolute; 
+    width: 100%;  
     top: 0;
     left: 0;
-    pointer-events: none;  /* Make sure it doesn't interfere with other elements */
-    z-index: 1;  /* Ensure it stays behind other elements */
+    pointer-events: none;  
+    z-index: 1;  
 }
 
 /* Star effect */
@@ -78,20 +70,20 @@ header {
     position: absolute;
     width: 2px;
     height: 2px;
-    border-radius: 50%; /* More natural circular stars */
+    border-radius: 50%;
     background-color: white;
-    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4); /* Glow effect */
+    box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
 }
 
 /* Project name styling */
 header h1 {
-    margin-bottom: 0; /* Remove bottom margin to keep header tight */
-    font-size: 1.5rem; /* Adjust font size for smaller screens */
-    padding: 10px 0; /* Add padding for vertical spacing */
-    color: white !important; /* Ensure text is white */
-    position: relative; /* Ensure it stays in the document flow */
-    z-index: 2; /* Ensure the text stays above the stars */
-    opacity: 1 !important; /* Explicitly set opacity to ensure it's not transparent */
+    margin-bottom: 0; 
+    font-size: 1.5rem; 
+    padding: 10px 0; 
+    color: white !important; 
+    position: relative; 
+    z-index: 2; 
+    opacity: 1 !important; 
 }
 
 /*
@@ -102,76 +94,72 @@ header h1 {
 
 /* Navbar styling */
 .navbar {
-    width: 100%; /* Make the navbar span the whole width */
-    padding: 0; /* Remove extra padding */
-    background-color: transparent important!; /* Dark background color for the navbar */
-    position: relative; /* Ensure navbar stays within the header */
-    z-index: -2; /* Place the navbar above the sky and heading */
-    margin: 0; /* Ensure no additional margins */
-    border: none; /* Ensure no borders */
+    width: 100%; 
+    padding: 0; 
+    background-color: transparent important!; 
+    position: relative; 
+    z-index: -2; 
+    margin: 0; 
+    border: none; 
 }
 
-/* Remove any extra padding or margin in container-fluid */
 .container-fluid {
-    padding: 0;  /* Remove any default padding */
-    margin: 0;    /* Remove any margin */
+    padding: 0;  
+    margin: 0;    
 }
 
-/* Navbar items in a row */
+/* Navbar */
 .navbar-nav {
     background-color: transparent !important;
     color: white important!;
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 15px; /* Add gap between navbar items */
-    margin: 0; /* Remove margin */
+    gap: 15px; 
+    margin: 0; 
 }
 
-/* Optional: If there's any unwanted white line, ensure no extra borders or margins */
 .navbar-light {
     border: none;
     background-color: transparent !important;
 }
 
-/* Make sure navbar text is not transparent and visible */
 nav.navbar .navbar-nav .nav-link {
-    color: white !important; /* Set text color to white (or any color you prefer) */
+    color: white !important; 
 }
 
-/* Optional: if you want the navbar links to change color on hover */
 nav.navbar .navbar-nav .nav-link:hover {
-    color: #F9E36B !important; /* Lighter color on hover for contrast */
+    color: #F9E36B !important; 
     transform: scale(1.1);
 }
 
 .navbar-toggler {
     border: none;
 }
-/* Adjust the canvas behind other elements */
+
 canvas {
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    z-index: -1; /* Send the canvas behind other elements */
+    z-index: -1; 
 }
 
 body.light-theme {
-    background-color: #d3c8e0 !important; /* Soft purple background for light theme */
+    background-color: #d3c8e0 !important; 
 }
 
 body.light-theme .landing-text {
-    color: white; /* Light text color for light theme */
+    color: white; 
 }
 
 body.dark-theme {
-    background-color: #AEC6CF; /* Light blue background for dark theme */
+    background-color: #AEC6CF; 
 }
 
 body.dark-theme .landing-text {
-    color: white; /* Light text color for dark theme */
+    color: white; 
 }
 
 /*
@@ -180,7 +168,6 @@ body.dark-theme .landing-text {
 -----------------------------------------------------------
 */
 
-/* Ensure that the theme toggle button is on the right side */
 button#theme-toggle {
     margin-left: 10px;
     font-size: 1.2rem;
@@ -196,26 +183,27 @@ button#theme-toggle {
     border-radius: 8px;
     cursor: pointer;
     color: white;
-    z-index: 10; /* Ensure the button is above the canvas */
-    margin-left: 10px; /* Space out the button from the last link */
+    z-index: 10; 
+    margin-left: 10px; 
     box-shadow: none;
 }
 
-/* Remove focus and active outline/box-shadow */
+
 #theme-toggle:focus, 
 #theme-toggle:active {
-    outline: none; /* Remove outline on focus */
-    box-shadow: none; /* Remove box-shadow on active */
+    outline: none important!; 
+    box-shadow: none; 
     border: none;
 }
 
 #theme-toggle:hover {
     transform: scale(1.1); 
+    outline: none;
 }
 
 /* Add smooth transition to the button */
 #theme-toggle:focus-visible {
-    outline: none !important; /* Remove outline */
+    outline: none !important; 
 }
 
 /*
@@ -226,34 +214,32 @@ SCROLL BAR
 
 /* Style the scrollbar itself */
 ::-webkit-scrollbar {
-    width: 12px; /* Width of the vertical scrollbar */
-    height: 12px; /* Height of the horizontal scrollbar */
+    width: 12px; 
+    height: 12px; 
 }
 
-/* Style the track (the part the thumb slides within) */
+/* Style the track */
 ::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Light background color for the track */
-    border-radius: 10px; /* Rounded corners for the track */
+    background-color: #f1f1f1; 
+    border-radius: 10px; 
 }
 
-/* Style the thumb (the draggable part of the scrollbar) */
+/* Style the thumb */
 ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Darker color for the thumb */
-    border-radius: 10px; /* Rounded corners for the thumb */
-    border: 3px solid #f1f1f1; /* Optional: Add border to create separation */
+    background-color: #888; 
+    border-radius: 10px;
+    border: 3px solid #f1f1f1; 
 }
 
 /* Style the thumb when hovered */
 ::-webkit-scrollbar-thumb:hover {
-    background-color: #555; /* Darker color on hover */
+    background-color: #F5A7A1; 
 }
 
-/* Style the scrollbar corner (where horizontal and vertical scrollbars meet) */
+/* Style the scrollbar corner */
 ::-webkit-scrollbar-corner {
-    background-color: #f1f1f1; /* Same color as the track */
+    background-color: #f1f1f1; 
 }
-
-
 
 /*
 -----------------------------------------------------------
@@ -262,16 +248,16 @@ SCROLL BAR
 */
 
 .footer {
-    display: flex; /* Enable Flexbox */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    height: 40px; /* Set the height of the footer */
-    padding: 3px; /* Optional padding to adjust spacing */
-    text-align: center; /* Ensure text is centered in the block */
-    position: fixed; /* Fixed positioning */
-    bottom: 0; /* Align to the bottom of the viewport */
-    left: 0; /* Ensure it spans across the width */
-    width: 100%; /* Full width of the viewport */
+    display: flex; 
+    justify-content: center; 
+    align-items: center;
+    height: 40px; 
+    padding: 3px; 
+    text-align: center;
+    position: fixed;
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
 }
 
 .footer-content {
@@ -286,43 +272,39 @@ SCROLL BAR
 }
 
 .footer-content a {
-    color: black; /* Links inside footer-content remain white */
-    text-decoration: none; /* Remove underline */
+    color: black;
+    text-decoration: none;
 }
-
 
 /* -------------
  Media Queries
  --------------- */
 
 @media (max-width: 767px) {
-    /* Make header text smaller for phone version */
     header h1 {
-        font-size: 1.2rem; /* Smaller font size */
+        font-size: 1.2rem; 
     }
 
     nav.navbar .navbar-nav {
-        text-align: center; /* Center items on small screens */
+        text-align: center;
     }
 
     nav.navbar .nav-item {
-        padding: 0 10px; /* Add space between items */
+        padding: 0 10px; 
     }
 
     nav.navbar .nav-link {
-        font-size: 14px; /* Reduce font size on small screens */
+        font-size: 14px; 
     }
 
     nav.navbar .container-fluid {
-        flex-wrap: nowrap; /* Prevent the button from wrapping */
+        flex-wrap: nowrap; 
     }
 
-    /* Make sure toggle button stays aligned */
     #theme-toggle {
-        margin-left: 15px; /* Adjust margin to align properly */
+        margin-left: 15px; 
     }
 
-    /* Adjust toggle button size */
     button#theme-toggle {
         font-size: 1.2rem;
     }
