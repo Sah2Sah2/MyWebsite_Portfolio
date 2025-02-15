@@ -157,6 +157,35 @@ PROJECT CARD
     opacity: 0.3;
 }
 
+/*----------------
+GitHub Section - Minimal and Clean
+----------------*/
+.github-section {
+    padding: 50px 0;
+    text-align: center;
+}
+
+.github-section h3 {
+    font-size: 1.6rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: #333; 
+    margin-bottom: 20px;
+}
+
+.github-section h3 a {
+    text-decoration: none;
+    color: #F9E36B; 
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.github-section h3 a:hover {
+    color: #F5A7A1; 
+    transform: translateY(-3px); 
+}
+
+
 /* -------------
  Media Queries
  --------------- */

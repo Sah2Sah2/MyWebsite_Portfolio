@@ -2,7 +2,6 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Contact Me</title>
 
@@ -10,13 +9,12 @@
 
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    
+
     <!-- Custom CSS for Contacts Page -->
     <link rel="stylesheet" href="contacts.css">
     <link rel="stylesheet" href="style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
-
 </head>
 
 <body>
@@ -34,7 +32,7 @@
                 <li class="nav-item"><a class="nav-link text-dark" href="Portfolio.html">Portfolio</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="Contacts.html">Contacts</a></li>
             </ul>
-            <button id="theme-toggle" class="btn btn-link ml-2">🌕</button>
+            <button id="theme-toggle" class="btn btn-link ml-2" aria-label="Toggle Theme">🌕</button>
         </div>
     </nav>
 </header>
@@ -90,19 +88,19 @@
         <div class="col-md-6">
             <div class="form-container glass-card p-4 d-flex flex-column h-100">
                 <h3 class="text-center mt-5">Contact Form</h3>
-                <form action="contact-form.php" method="POST">
+                <form id="contact-form">
                     <div class="mb-3">
-                        <label for="name" class="form-label"></label>
+                        <label for="name" class="form-label">Your Name</label>
                         <input type="text" class="form-control" id="name" placeholder="Your name" name="name" required>
                     </div>
             
                     <div class="mb-3">
-                        <label for="email" class="form-label"></label>
+                        <label for="email" class="form-label">Your Email</label>
                         <input type="email" class="form-control" id="email" placeholder="Your email" name="email" required>
                     </div>
             
                     <div class="mb-3">
-                        <label for="message" class="form-label"></label>
+                        <label for="message" class="form-label">Your Message</label>
                         <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your message" required></textarea>
                     </div>
             
@@ -129,6 +127,49 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+<script>
+    // Get the form element
+    const form = document.getElementById('contact-form');
+
+    form.addEventListener('submit', async (event) => {
+        event.preventDefault(); // Prevent form from submitting normally
+
+        // Get form data
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        // Create an object with the form data
+        const formData = {
+            name: name,
+            email: email,
+            message: message
+        };
+
+        // Send the data to the Node.js API
+        try {
+            const response = await fetch('http://your-api-endpoint.com/send-email', { // Replace with your actual API endpoint
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            });
+
+            // Check if the request was successful
+            if (response.ok) {
+                alert('Your message has been sent successfully!');
+                form.reset(); // Reset the form fields
+            } else {
+                const errorData = await response.json();
+                alert('Failed to send message: ' + errorData.message);
+            }
+        } catch (error) {
+            alert('An error occurred: ' + error.message);
+        }
+    });
+</script>
 
 </body>
 </html>
