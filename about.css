@@ -4,12 +4,25 @@ ABOUT SECTION - Styling
 -----------------------------------------------------------
 */
 
-body {
+body.about-page {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    overflow-x: hidden; 
-    overflow-y: auto;   
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding-top: 80px;
+}
+
+/* About Section */
+.about-me {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    max-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: calc(100vh - 100px);
 }
 
 
@@ -33,12 +46,13 @@ CAROUSEL
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
+   
 }
 
 .carousel-inner {
     width: 100%;
     overflow: hidden; /* Ensure no overflow happens */
+     height: auto;
 }
 
 
@@ -326,32 +340,41 @@ p a:hover::after {
  Media Queries
  --------------- */
 
-@media (max-width: 768px) {
-    .about-me h2 {
-        font-size: 1.5rem; /
+ @media (max-width: 768px) {
+    .about-me {
+        padding-top: 60px;
+        padding-bottom: 60px;
+        overflow-y: visible; 
+    }
+
+    .about-me h1 {
+        font-size: 1.5rem;  
     }
 
     .about-me p {
-        font-size: 1rem; 
+        font-size: 1rem;
     }
 
     .sliding-text-wrapper {
-        animation: slideText 20s linear infinite;  
+        white-space: nowrap;
+        animation: slideText 15s linear infinite; 
+        will-change: transform;
     }
 
-    .sliding-text {
-        font-size: 1rem;
+    .carousel-inner img {
+        height: auto;
+        max-width: 100%;
+        object-fit: cover; 
     }
     
-    .carousel-caption {
-        bottom: 15%;
-        font-size: 1.2rem; 
-    }
 
+    html {
+        scroll-behavior: smooth;
+        -webkit-overflow-scrolling: touch; 
+    }
 }
 
 @media (max-width: 480px) {
-
     .about-me h2 {
         font-size: 1.2rem; 
     }
@@ -361,16 +384,18 @@ p a:hover::after {
     }
 
     .sliding-text-wrapper {
-        animation: slideText 20s linear infinite; 
+        animation: slideText 15s linear infinite; 
+        transform: translateZ(0);
     }
 
     .sliding-text {
         font-size: 0.9rem;
-      
     }
 
     .carousel-inner img {
-        height: 350px; 
+        height: auto;
+        max-width: 100%;
+        object-fit: cover;
     }
 
     .carousel {
@@ -378,8 +403,7 @@ p a:hover::after {
     }
 
     .carousel-caption {
-        bottom: 20%;
+        bottom: 15%;
         font-size: 1rem;
     }
 }
-
