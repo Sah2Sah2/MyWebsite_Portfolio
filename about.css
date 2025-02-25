@@ -51,7 +51,7 @@ CAROUSEL
 
 .carousel-inner {
     width: 100%;
-    overflow: hidden; /* Ensure no overflow happens */
+    overflow: hidden;
      height: auto;
 }
 
@@ -397,9 +397,9 @@ p a:hover::after {
     }
 
     .carousel-inner img {
-        height: auto;
-        max-width: 100%;
-        object-fit: cover;
+        width: 60%;
+        height: 450px; 
+        object-fit: cover; 
     }
 
     .carousel {

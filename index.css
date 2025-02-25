@@ -204,10 +204,6 @@ UNDERLINE + BUTTONS
         font-size: 1.4rem; 
     }
 
-    .wavy-underline {
-        text-decoration-style: solid; 
-        text-underline-offset: 4px;
-    }
 }
 
 /* Tablets */
