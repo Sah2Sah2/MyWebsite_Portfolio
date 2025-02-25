@@ -126,7 +126,7 @@ SLIDING TEXT
     white-space: nowrap;
     font-size: 1.5rem;
     font-weight: bold;
-    color: #333;
+    color: #2C3E50;
     padding-right: 10rem; 
 
 }
@@ -252,7 +252,7 @@ h1, h2, p {
 .about-me p {
     font-size: 1.1rem;
     line-height: 1.5;
-    color: #444;
+    color: #2C3E50;
 }
 
 .about-me a {
@@ -282,7 +282,7 @@ h1, h2, p {
     text-decoration: underline;
     text-decoration-color: #F9E36B;            
     text-decoration-style: wavy;               
-    color: #333;   
+    color: #2C3E50;   
     text-underline-offset: 6px;                          
 } 
   .wavy-underline:hover {

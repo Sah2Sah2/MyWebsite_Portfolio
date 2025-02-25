@@ -11,6 +11,8 @@ Colors:
     Light mode: #d3c8e0
     Dark mode: #AEC6CF
 
+    Text colors when black: #2C3E50
+
     Buttons/Highlights: Pastel teal (light: BFD3C1 dark: A8C7A0)
     Hover: 
 
@@ -272,7 +274,7 @@ SCROLL BAR
 }
 
 .footer-content a {
-    color: black;
+    color: #2C3E50;
     text-decoration: none;
 }
 

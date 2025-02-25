@@ -6,11 +6,11 @@ body {
 
 /* General styles for consistency */
 body.light-theme {
-    color: #333;
+    color: #2C3E50;
 }
 
 body.dark-theme {
-    color: black;
+    color: #2C3E50;
 }
 
 /* -----------------------------------------------------------
@@ -188,7 +188,7 @@ CARDS
 
 .flip-card-back {
     background: transparent;
-    color: black;
+    color: #2C3E50;
     transform: rotateY(180deg);
 }
 
@@ -215,18 +215,18 @@ SOCIALS
     align-items: center;
     gap: 8px;
     transition: background-color 0.3s, border-color 0.3s;
-    border: 1px solid black;  
+    border: 1px solid #2C3E50;  
 }
 
 /* Hover effects for other buttons */
 .social-links a.btn-outline-primary:hover {
     background-color: #F9E36B !important;
-    color: black;
+    color: #2C3E50;
 }
 
 .social-links a.btn-outline-dark:hover {
     background-color: #F9E36B !important;
-    color: black;
+    color: #2C3E50;
 }
 
 /* -----------------------------------------------------------
@@ -294,13 +294,13 @@ form .form-label {
     font-size: 1rem;
     padding-bottom: 6px;
     font-weight: bold;
-    color: #333;
+    color: #2C3E50;
 }
 
 /* Adjust button to match form */
 form .btn.btn-primary {
     background-color: #BFD3C1;
-    border-color: black;
+    border-color: #2C3E50;
     color: #3B4D3A;
     font-size: 15px;
     padding: 14px 20px; 

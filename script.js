@@ -105,6 +105,29 @@ createStars(150);
 selectStars();
 animateStars();
 
+// Typed text
+document.addEventListener('DOMContentLoaded', function () {
+    const typedText = "Hello Moon! I'm Sara.";
+    let index = 0;
+    const speed = 100; // Typing speed in milliseconds
+    const textElement = document.getElementById("typed-text");
+    const cursor = document.getElementById("cursor");
+
+    function typeText() {
+        if (index < typedText.length) {
+            textElement.innerHTML += typedText.charAt(index);
+            index++;
+            setTimeout(typeText, speed);
+        } else {
+            // Once typing is done, hide the cursor
+            cursor.style.display = "none";
+        }
+    }
+
+    typeText();
+});
+
+
 
 //Sliding text
 document.addEventListener("DOMContentLoaded", function () {

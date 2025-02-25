@@ -16,6 +16,22 @@ TEXT
 -----------------------------------------------------------
 */
 
+#cursor {
+    animation: blink 0.7s infinite step-end;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+#typed-text {
+    color: #2C3E50; /* Dark, deep grayish-blue for the text (elegant, like the night sky) */
+    font-weight: 600;  /* A bit of boldness for clarity */
+    letter-spacing: 2px; /* Slightly more space between letters for readability */
+}
+
 .landing-text {
     position: absolute;
     top: 50%;
@@ -40,7 +56,7 @@ UNDERLINE + BUTTONS
     text-decoration: underline;
     text-decoration-color: #F9E36B;       
     text-decoration-style: wavy;               
-    color: #333;    
+    color: #2C3E50;    
     text-underline-offset: 6px;                        
 } 
   .wavy-underline:hover {
@@ -84,7 +100,7 @@ UNDERLINE + BUTTONS
 }
 
 .github-button {
-    color: #333; 
+    color: #2C3E50; 
 }
 
 .faq-button {
