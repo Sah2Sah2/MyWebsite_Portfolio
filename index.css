@@ -172,3 +172,74 @@ UNDERLINE + BUTTONS
 /* -------------
  Media Queries
  --------------- */
+
+/* Phones */
+@media (max-width: 575px) {
+    .content {
+        margin-left: 15px !important;  
+        text-align: center !important; 
+    }
+
+    h1, h2 {
+        text-align: left;
+        margin-left: 15px;
+    }
+
+    h1 {
+        font-size: 1.6rem;
+    }
+
+    h2 {
+        font-size: 1.1rem;
+    }
+    .button-container {
+        flex-direction:row ;
+        gap: 10px; 
+        justify-content: center; 
+        align-items: center; 
+    }
+
+    .button {
+        padding: 12px;
+        font-size: 1.4rem; 
+    }
+
+    .wavy-underline {
+        text-decoration-style: solid; 
+        text-underline-offset: 4px;
+    }
+}
+
+/* Tablets */
+@media (min-width: 576px) and (max-width: 991px) {
+    .content {
+        margin-left: 30px !important;  
+        text-align: center !important;
+    }
+
+    h1, h2 {
+        text-align: center;
+        font-size: 1.4rem;
+    }
+
+    .button-container {
+        flex-direction: row;  
+        gap: 12px; 
+    }
+}
+
+/* For very large screens */
+@media (min-width: 992px) {
+    .content {
+        margin-left: 50px !important; 
+    }
+
+    .button-container {
+        gap: 15px;
+    }
+
+    .button {
+        padding: 14px;
+        font-size: 1.6rem; 
+    }
+}
