@@ -4,17 +4,27 @@ ABOUT SECTION - Styling
 -----------------------------------------------------------
 */
 
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    overflow-x: hidden; 
+    overflow-y: auto;   
+}
+
+
+html {
+    overflow-x: hidden; 
+    overflow-y: auto;   
+    height: 100%;
+}
+
 /*
 -----------------------------------------------------------
 CAROUSEL
 -----------------------------------------------------------
 */
 
-body { 
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh; 
-}
 
 .carousel {
     width: 100%;
@@ -23,7 +33,14 @@ body {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
 }
+
+.carousel-inner {
+    width: 100%;
+    overflow: hidden; /* Ensure no overflow happens */
+}
+
 
 /* Carousel Images */
 .carousel-inner img {
@@ -136,7 +153,19 @@ h1, h2, p {
     font-size: clamp(14px, 2vw, 24px); 
 }
 
-/* About Me Heading (h1) Style */
+.about-me {
+    height: calc(100vh - 160px); 
+    padding-top: 80px;
+    padding-bottom: 80px;
+    position: relative;
+    overflow: hidden;  
+}
+
+.about-me {
+    max-height: 100vh;
+}
+
+/* About Me Heading h1 */
 .about-me h1 {
     font-size: 1.8rem; 
     font-weight: bold;
@@ -171,7 +200,7 @@ h1, h2, p {
     }
 }
 
-/* My toolkit Heading (h3) Style */
+/* My toolkit Heading h3 */
 .about-me h3 {
     font-size: 1.6rem; 
     font-weight: normal; 
@@ -181,7 +210,7 @@ h1, h2, p {
     text-decoration: none; 
 }
 
-/* Hover effect: Add wavy underline */
+/* Hover effect */
 .about-me h3:hover {
     animation: bounce 0.5s ease; 
     color: #F5A7A1; 
@@ -316,7 +345,7 @@ p a:hover::after {
     
     .carousel-caption {
         bottom: 15%;
-        font-size: 1.2rem; /* Adjust font size for better visibility */
+        font-size: 1.2rem; 
     }
 
 }
