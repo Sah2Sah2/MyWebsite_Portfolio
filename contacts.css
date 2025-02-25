@@ -276,7 +276,7 @@ form .form-control {
     transition: border-color 0.3s ease;
 }
 
-/* Message input (specific to the message field) */
+/* Message input */
 #message.form-control {
     width: 100%;
     min-height: 150px; 
@@ -285,9 +285,11 @@ form .form-control {
 
 /* Focus state for inputs */
 form .form-control:focus {
-    border-color: #BFD3C1;
-    outline: none;
+    border-color: #BFD3C1; 
+    outline: none; 
+    box-shadow: 0 0 5px rgba(44, 62, 80, 0.8); 
 }
+
 
 /* Adjusting the labels */
 form .form-label {

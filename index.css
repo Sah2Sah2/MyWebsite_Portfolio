@@ -16,22 +16,59 @@ TEXT
 -----------------------------------------------------------
 */
 
-#cursor {
-    animation: blink 0.7s infinite step-end;
+/* Common styles for #typed-text and .typewrite */
+#typed-text, .typewrite {
+    color: #2C3E50;
+    display: inline-block; 
+    white-space: nowrap;
+    overflow: hidden;
+    letter-spacing: 0.15em;
+    text-align: left; 
+    position: relative; 
 }
 
-@keyframes blink {
-    50% {
-        opacity: 0;
-    }
+/* Align both h1 and h2 in the same way */
+h1, h2 {
+    text-align: left; 
+    margin: 0; 
+    padding: 0; 
+    width: auto; 
+    display: inline-block; 
+    position: relative; /
 }
 
-#typed-text {
-    color: #2C3E50; /* Dark, deep grayish-blue for the text (elegant, like the night sky) */
-    font-weight: 600;  /* A bit of boldness for clarity */
-    letter-spacing: 2px; /* Slightly more space between letters for readability */
+/* Remove cursor for .typewrite (used in h2) */
+.typewrite {
+    border-right: none;
 }
 
+/* Typing effect animation */
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+@keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: #2C3E50; }
+}
+
+h1 {
+    display: block; /
+}
+
+h2 {
+    margin-top: 0.2em; 
+    display: block; 
+    height: auto;
+    line-height: 1.5em;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-top: 0; 
+}
+
+
+/* Styling for the landing text */
 .landing-text {
     position: absolute;
     top: 50%;
@@ -42,7 +79,7 @@ TEXT
     text-align: center;
     padding: 20px;
     width: 100%;
-    line-height: 4; 
+    line-height: 4;
 }
 
 /*
@@ -55,8 +92,7 @@ UNDERLINE + BUTTONS
 .wavy-underline {
     text-decoration: underline;
     text-decoration-color: #F9E36B;       
-    text-decoration-style: wavy;               
-    color: #2C3E50;    
+    text-decoration-style: wavy;                   
     text-underline-offset: 6px;                        
 } 
   .wavy-underline:hover {

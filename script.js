@@ -105,26 +105,78 @@ createStars(150);
 selectStars();
 animateStars();
 
-// Typed text
-document.addEventListener('DOMContentLoaded', function () {
-    const typedText = "Hello Moon! I'm Sara.";
-    let index = 0;
-    const speed = 100; // Typing speed in milliseconds
-    const textElement = document.getElementById("typed-text");
-    const cursor = document.getElementById("cursor");
 
-    function typeText() {
-        if (index < typedText.length) {
-            textElement.innerHTML += typedText.charAt(index);
-            index++;
-            setTimeout(typeText, speed);
+// Typed texts
+document.addEventListener('DOMContentLoaded', function () {
+    const typedText1 = "Hello Moon! I'm Sara."; // First text for <h1>
+    let index1 = 0;
+    const speed = 100; // Typing speed in milliseconds
+    const textElement1 = document.getElementById("typed-text");
+
+    // Function to handle typing effect for the first line (<h1>)
+    function typeText1() {
+        if (index1 < typedText1.length) {
+            textElement1.innerHTML += typedText1.charAt(index1);
+            index1++;
+            setTimeout(typeText1, speed);
         } else {
-            // Once typing is done, hide the cursor
-            cursor.style.display = "none";
+            // Once typing is done, change border to transparent (hide cursor)
+            textElement1.style.borderRight = 'none';
         }
     }
 
-    typeText();
+    // Start typing effect for the first line
+    typeText1();
+
+    // Second line of text rotating text effect (for <h2>)
+    var TxtType = function(el, toRotate, period) {
+        this.toRotate = toRotate;
+        this.el = el;
+        this.loopNum = 0;
+        this.period = parseInt(period, 10) || 2000;
+        this.txt = '';
+        this.tick();
+        this.isDeleting = false;
+    };
+
+    TxtType.prototype.tick = function() {
+        var i = this.loopNum % this.toRotate.length;
+        var fullTxt = this.toRotate[i];
+
+        if (this.isDeleting) {
+            this.txt = fullTxt.substring(0, this.txt.length - 1);
+        } else {
+            this.txt = fullTxt.substring(0, this.txt.length + 1);
+        }
+
+        this.el.innerHTML = '<span>' + this.txt + '</span>';
+
+        var that = this;
+        var delta = this.isDeleting ? 75 : 150; // Speed of typing/deleting
+
+        if (!this.isDeleting && this.txt === fullTxt) {
+            delta = this.period;
+            this.isDeleting = true;
+        } else if (this.isDeleting && this.txt === '') {
+            this.isDeleting = false;
+            this.loopNum++;
+            delta = 500;
+        }
+
+        setTimeout(function() {
+            that.tick();
+        }, delta);
+    };
+
+    // Initialize the second text element with text to rotate
+    var elements = document.getElementsByClassName('typewrite');
+    for (var i = 0; i < elements.length; i++) {
+        var toRotate = elements[i].getAttribute('data-type');
+        var period = elements[i].getAttribute('data-period');
+        if (toRotate) {
+            new TxtType(elements[i], JSON.parse(toRotate), period);
+        }
+    }
 });
 
 
