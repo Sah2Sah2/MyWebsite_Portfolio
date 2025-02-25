@@ -161,6 +161,10 @@ PROJECT CARD
 GitHub Section - Minimal and Clean
 ----------------*/
 .github-section {
+    width: 100%;
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
     padding: 50px 0;
     text-align: center;
 }
