@@ -108,25 +108,12 @@ animateStars();
 
 // Typed texts
 document.addEventListener('DOMContentLoaded', function () {
+    // Static text for <h1>
     const typedText1 = "Hello Moon! I'm Sara."; // First text for <h1>
-    let index1 = 0;
-    const speed = 100; // Typing speed in milliseconds
     const textElement1 = document.getElementById("typed-text");
 
-    // Function to handle typing effect for the first line (<h1>)
-    function typeText1() {
-        if (index1 < typedText1.length) {
-            textElement1.innerHTML += typedText1.charAt(index1);
-            index1++;
-            setTimeout(typeText1, speed);
-        } else {
-            // Once typing is done, change border to transparent (hide cursor)
-            textElement1.style.borderRight = 'none';
-        }
-    }
-
-    // Start typing effect for the first line
-    typeText1();
+    // Set static text for <h1>
+    textElement1.innerHTML = typedText1;
 
     // Second line of text rotating text effect (for <h2>)
     var TxtType = function(el, toRotate, period) {

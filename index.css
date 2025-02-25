@@ -16,33 +16,36 @@ TEXT
 -----------------------------------------------------------
 */
 
-/* Common styles for #typed-text and .typewrite */
+#typed-text {
+    letter-spacing: 0.15em; 
+}
+
 #typed-text, .typewrite {
     color: #2C3E50;
     display: inline-block; 
     white-space: nowrap;
     overflow: hidden;
-    letter-spacing: 0.15em;
     text-align: left; 
     position: relative; 
 }
 
-/* Align both h1 and h2 in the same way */
 h1, h2 {
     text-align: left; 
     margin: 0; 
     padding: 0; 
     width: auto; 
     display: inline-block; 
-    position: relative; /
+    position: relative;
 }
 
-/* Remove cursor for .typewrite (used in h2) */
+h2 {
+    font-size: 1.5rem;  
+}
+
 .typewrite {
     border-right: none;
 }
 
-/* Typing effect animation */
 @keyframes typing {
     from { width: 0 }
     to { width: 100% }
@@ -54,19 +57,24 @@ h1, h2 {
 }
 
 h1 {
-    display: block; /
+    display: block;
 }
 
 h2 {
     margin-top: 0.2em; 
     display: block; 
-    height: auto;
     line-height: 1.5em;
     overflow: hidden;
     white-space: nowrap;
     padding-top: 0; 
+    height: 3em; 
+    position: relative; 
 }
 
+p {
+    margin-top: 0.5em;
+    position: relative; 
+}
 
 /* Styling for the landing text */
 .landing-text {
@@ -81,6 +89,7 @@ h2 {
     width: 100%;
     line-height: 4;
 }
+
 
 /*
 -----------------------------------------------------------
