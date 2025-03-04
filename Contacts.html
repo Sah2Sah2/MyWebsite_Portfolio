@@ -2,9 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Contact Me</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=2.0,">
+    <title>Sara Battistella | Contact | Get in Touch  |  Dowload my CV</title>
 
+    <!-- Google Font --> 
     <link href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
     <!-- Bootstrap CSS -->
@@ -29,10 +30,11 @@
             <ul class="navbar-nav mx-auto d-flex flex-row align-items-center">
                 <li class="nav-item"><a class="nav-link text-dark" href="index.html">Home</a></li>
                 <li class="nav-item"><a class="nav-link text-dark" href="about.html">About</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="Portfolio.html">Portfolio</a></li>
-                <li class="nav-item"><a class="nav-link text-dark" href="Contacts.html">Contacts</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="portfolio.html">Portfolio</a></li>
+                <li class="nav-item"><a class="nav-link text-dark" href="contacts.html">Contacts</a></li>
             </ul>
-            <button id="theme-toggle" class="btn btn-link ml-2" aria-label="Toggle Theme">🌕</button>
+            <button id="theme-toggle" class="btn btn-link ml-2" aria-label="Toggle theme">🌕</button>
+
         </div>
     </nav>
 </header>
@@ -52,7 +54,7 @@
 
             <!-- CV Download Button -->
             <div class="mt-4">
-                <a href="path/to/your/cv.pdf" class="btn btn-secondary" download>Download My CV</a>
+                <a href="Photos/CV Sara Battistella EN.pdf" class="btn btn-secondary" download>Download My CV</a>
             </div>
 
             <!-- Social Media Links Section -->
@@ -84,24 +86,24 @@
             </div>
         </div>
 
-        <!-- Form on Right (Expanded to take more space) -->
+        <!-- Form on Right  -->
         <div class="col-md-6">
             <div class="form-container glass-card p-4 d-flex flex-column h-100">
                 <h3 class="text-center mt-5">Contact Form</h3>
                 <form id="contact-form">
                     <div class="mb-3">
                         <label for="name" class="form-label"></label>
-                        <input type="text" class="form-control" id="name" placeholder="Your name" name="name" required>
+                        <input type="text" class="form-control" id="name" placeholder="Your name" name="name" required aria-label="Your Name">
                     </div>
             
                     <div class="mb-3">
                         <label for="email" class="form-label"></label>
-                        <input type="email" class="form-control" id="email" placeholder="Your email" name="email" required>
+                        <input type="email" class="form-control" id="email" placeholder="Your email" name="email" required aria-label="Your email">
                     </div>
             
                     <div class="mb-3">
                         <label for="message" class="form-label"></label>
-                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your message" required></textarea>
+                        <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your message" required aria-label="Your Message"></textarea>
                     </div>
             
                     <div class="mb-3">
@@ -129,18 +131,15 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-    // Get the form element
     const form = document.getElementById('contact-form');
 
     form.addEventListener('submit', async (event) => {
-        event.preventDefault(); // Prevent form from submitting normally
+        event.preventDefault(); 
 
-        // Get form data
         const name = document.getElementById('name').value;
         const email = document.getElementById('email').value;
         const message = document.getElementById('message').value;
 
-        // Create an object with the form data
         const formData = {
             name: name,
             email: email,
@@ -149,7 +148,7 @@
 
         // Send the data to the Node.js API
         try {
-            const response = await fetch('http://your-api-endpoint.com/send-email', { // Replace with your actual API endpoint
+            const response = await fetch('http://your-api-endpoint.com/send-email', { // Replace with actual API endpoint
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -157,10 +156,9 @@
                 body: JSON.stringify(formData)
             });
 
-            // Check if the request was successful
             if (response.ok) {
                 alert('Your message has been sent successfully!');
-                form.reset(); // Reset the form fields
+                form.reset(); 
             } else {
                 const errorData = await response.json();
                 alert('Failed to send message: ' + errorData.message);

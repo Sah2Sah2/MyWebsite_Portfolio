@@ -1,3 +1,11 @@
+/*
+-----------------------------------------------------------
+SCRIPT.JS 
+-----------------------------------------------------------
+*/
+
+
+/* Theme Toggle */
 document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;
     const themeToggleBtn = document.getElementById("theme-toggle");
@@ -6,6 +14,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // Function to toggle the theme
     function toggleTheme(isLightTheme) {
         if (isLightTheme) {
+
             // Light theme settings
             body.style.backgroundColor = '#d3c8e0';  
             if (typeof scene !== 'undefined') {
@@ -16,6 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
             moonIcon.textContent = '🌕'; 
             localStorage.setItem("theme", "light-theme"); 
         } else {
+
             // Dark theme settings
             body.style.backgroundColor = '#AEC6CF'; 
             if (typeof scene !== 'undefined') {
@@ -31,8 +41,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Event listener for the theme toggle button
     themeToggleBtn.addEventListener("click", () => {
         if (body.classList.contains('light-theme')) {
+
             toggleTheme(false); // Switch to dark theme
+
         } else {
+
             toggleTheme(true); // Switch to light theme
         }
     });
@@ -57,6 +70,8 @@ function createStars(numberOfStars) {
     }
 }
 
+
+/* STARS*/
 // Function to create and position stars
 function drawStars() {
     var tmpStar = document.createElement('figure');
@@ -106,9 +121,9 @@ selectStars();
 animateStars();
 
 
-// Typed texts
+/* Typed texts */
 document.addEventListener('DOMContentLoaded', function () {
-    // Static text for <h1>
+   
     const typedText1 = "Hello Moon! I'm Sara."; // First text for <h1>
     const textElement1 = document.getElementById("typed-text");
 
@@ -167,8 +182,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 
-
-//Sliding text
+/*Sliding text*/
 document.addEventListener("DOMContentLoaded", function () {
     const textElement = document.getElementById("sliding-text");
 
@@ -182,7 +196,7 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 
-// FAQ
+/*FAQ*/
 const toggles = document.querySelectorAll('.faq-toggle');
 
 toggles.forEach(toggle => {
@@ -190,6 +204,3 @@ toggles.forEach(toggle => {
     toggle.parentNode.classList.toggle('active');
   });
 });
-
-
-

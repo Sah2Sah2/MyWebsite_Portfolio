@@ -25,7 +25,6 @@ body.about-page {
     min-height: calc(100vh - 100px);
 }
 
-
 html {
     overflow-x: hidden; 
     overflow-y: auto;   
@@ -37,7 +36,6 @@ html {
 CAROUSEL
 -----------------------------------------------------------
 */
-
 
 .carousel {
     width: 100%;
@@ -54,7 +52,6 @@ CAROUSEL
     overflow: hidden;
      height: auto;
 }
-
 
 /* Carousel Images */
 .carousel-inner img {
@@ -163,6 +160,7 @@ SLIDING TEXT
 /* -------------
  About me
  --------------- */
+ 
 h1, h2, p {
     font-size: clamp(14px, 2vw, 24px); 
 }
@@ -216,7 +214,7 @@ h1, h2, p {
 
 /* My toolkit Heading h3 */
 .about-me h3 {
-    font-size: 1.6rem; 
+    font-size: 1.8rem; 
     font-weight: normal; 
     color: #F9E36B;  
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.6); 
@@ -264,7 +262,7 @@ h1, h2, p {
 }
 
 .about-me p {
-    font-size: 1.1rem;
+    font-size: 1rem;
     line-height: 1.5;
     color: #2C3E50;
 }

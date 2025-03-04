@@ -38,6 +38,14 @@ h1, h2 {
     position: relative;
 }
 
+h1 {
+    text-align: left;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 2rem; 
+}
+
 h2 {
     font-size: 1.5rem;  
 }
@@ -89,7 +97,6 @@ p {
     width: 100%;
     line-height: 4;
 }
-
 
 /*
 -----------------------------------------------------------
@@ -182,7 +189,7 @@ UNDERLINE + BUTTONS
 
     h1, h2 {
         text-align: left;
-        margin-left: 15px;
+        margin-left: 1px;
     }
 
     h1 {

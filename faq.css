@@ -1,4 +1,9 @@
-/* Ensure the body has a bit of padding at the top to accommodate the fixed header */
+/*
+-----------------------------------------------------------
+FAQ SECTION - Styling
+-----------------------------------------------------------
+*/
+
 body {
     padding-top: 60px;
 }
@@ -8,7 +13,6 @@ body {
     margin-top: 0;
 }
 
-/* Center-align h2 and add some spacing */
 h2 {
     margin: 20px 0 30px;
     text-align: center;
@@ -29,6 +33,16 @@ h2 {
     animation: bounce 0.5s ease;
     color: #F5A7A1;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+/* Linked word */
+a {
+    color: #F5A7A1; 
+    text-decoration: none; 
+}
+
+a:hover {
+    color: #AEC6CF;
 }
 
 /* Bounce animation */
@@ -100,12 +114,10 @@ h2 {
     text-underline-offset: 6px; 
 }
 
-/* Ensure there is no outline in the button in general */
 .card-header .btn-link {
     outline: none !important;
 }
 
-/* Ensure regular focus state does not show the blue box */
 .card-header .btn-link:focus,
 .card-header .btn-link:focus-visible,
 .card-header .btn-link:active {
@@ -117,7 +129,6 @@ h2 {
     text-underline-offset: 6px; 
 }
 
-/* Custom approach for the underline effect */
 .card-header .btn-link {
     position: relative;
     display: inline-block;
@@ -156,20 +167,22 @@ h2 {
     text-align: center; 
 }
 
-/* Optional: If you need better spacing within the body, add some padding */
 .card-body p {
     margin: 0;
 }
 
-/* Accordion styling */
 .accordion {
     box-shadow: none;
 }
 
 
+/* -------------
+ Media Queries
+ --------------- */
+ 
 @media (max-width: 768px) {
     
     body {
-        padding-top: 50px; /* Adjust the padding for smaller screens */
+        padding-top: 50px; 
     }
 }

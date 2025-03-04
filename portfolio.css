@@ -20,6 +20,7 @@ PORTFOLIO
     padding: 20px;
 
 }
+
 /* Styling for the h2 element */
 .text-center.mb-4 {
     font-size: 2rem;                     
@@ -55,7 +56,6 @@ PORTFOLIO
     }
 }
 
-
 /*
 -----------------------------------------------------------
 CONTAINER
@@ -72,10 +72,12 @@ CONTAINER
 PROJECT CARD
 -----------------------------------------------------------
 */
+
 .row {
     padding-left: 15px;
     padding-right: 15px;
 }
+
 .project-card {
     text-align: center;
     position: relative;
@@ -125,7 +127,6 @@ PROJECT CARD
     box-sizing: border-box; 
 }
 
-
 .project-card:hover .overlay {
     opacity: 1;
     visibility: visible;
@@ -140,7 +141,7 @@ PROJECT CARD
     transition: opacity 0.3s ease;
 }
 
-.project-card h4 {
+.project-card h3 {
     position: absolute;
     bottom: 10px;
     left: 50%;
@@ -158,8 +159,9 @@ PROJECT CARD
 }
 
 /*----------------
-GitHub Section - Minimal and Clean
+GitHub Section 
 ----------------*/
+
 .github-section {
     width: 100%;
     display: flex;

@@ -3,20 +3,11 @@
 GENERAL Styling
 -----------------------------------------------------------
 Font: Jost, Serif
-Font size: 
-    h1:
-    Footer: 1rem
-
 Colors: 
     Light mode: #d3c8e0
     Dark mode: #AEC6CF
 
     Text colors when black: #2C3E50
-
-    Buttons/Highlights: Pastel teal (light: BFD3C1 dark: A8C7A0)
-    Hover: 
-
-
 */
 
 /*
@@ -24,7 +15,6 @@ Colors:
  BODY 
 -----------------------------------------------------------
 */
-
 
 body {
     font-family: "Jost", serif;
@@ -54,7 +44,6 @@ header {
     backdrop-filter: blur(8px); 
     transition: background-color 0.3s ease-in-out; 
 }
-
 
 /* Add a sky background */
 #sky {
@@ -94,7 +83,7 @@ header h1 {
 -----------------------------------------------------------
 */
 
-/* Navbar styling */
+/* Navbar */
 .navbar {
     width: 100%; 
     padding: 0; 
@@ -110,7 +99,6 @@ header h1 {
     margin: 0;    
 }
 
-/* Navbar */
 .navbar-nav {
     background-color: transparent !important;
     color: white important!;
@@ -128,6 +116,12 @@ header h1 {
 
 nav.navbar .navbar-nav .nav-link {
     color: white !important; 
+}
+
+.nav-link.active {
+    font-weight: bold;
+    text-decoration: underline;
+    color: var(--moon-yellow);
 }
 
 nav.navbar .navbar-nav .nav-link:hover {
@@ -189,7 +183,6 @@ button#theme-toggle {
     margin-left: 10px; 
     box-shadow: none;
 }
-
 
 #theme-toggle:focus, 
 #theme-toggle:active {
