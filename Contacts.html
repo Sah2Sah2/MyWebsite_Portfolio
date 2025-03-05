@@ -134,11 +134,17 @@
     const form = document.getElementById('contact-form');
 
     form.addEventListener('submit', async (event) => {
-        event.preventDefault(); 
+        event.preventDefault();
 
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        // Simple frontend validation (can be expanded)
+        if (!name || !email || !message) {
+            alert("All fields are required.");
+            return;
+        }
 
         const formData = {
             name: name,
@@ -146,9 +152,8 @@
             message: message
         };
 
-        // Send the data to the Node.js API
         try {
-            const response = await fetch('http://your-api-endpoint.com/send-email', { // Replace with actual API endpoint
+            const response = await fetch('/send-email', {  // Proxy endpoint 
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -158,7 +163,7 @@
 
             if (response.ok) {
                 alert('Your message has been sent successfully!');
-                form.reset(); 
+                form.reset();
             } else {
                 const errorData = await response.json();
                 alert('Failed to send message: ' + errorData.message);
@@ -169,5 +174,3 @@
     });
 </script>
 
-</body>
-</html>
