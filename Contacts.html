@@ -16,6 +16,9 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+
+    <!-- reCAPTCHA API -->
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
 </head>
 
 <body>
@@ -105,6 +108,11 @@
                         <label for="message" class="form-label"></label>
                         <textarea class="form-control" id="message" name="message" rows="4" placeholder="Your message" required aria-label="Your Message"></textarea>
                     </div>
+
+                    <!-- reCAPTCHA widget -->
+                    <div class="mb-3">
+                        <div class="g-recaptcha" data-sitekey="6LddeOoqAAAAADkj_pVni-VD-FNU0yYsefn4gBlW"></div>
+                    </div>
             
                     <div class="mb-3">
                         <button type="submit" class="btn btn-primary w-100">Send Message</button>
@@ -140,20 +148,25 @@
         const email = document.getElementById('email').value.trim();
         const message = document.getElementById('message').value.trim();
 
-        // Simple frontend validation (can be expanded)
-        if (!name || !email || !message) {
-            alert("All fields are required.");
+        // Get the reCAPTCHA response
+        const captchaResponse = grecaptcha.getResponse();
+
+        // Frontend validation 
+        if (!name || !email || !message || !captchaResponse) {
+            alert("All fields and reCAPTCHA are required.");
             return;
         }
 
         const formData = {
             name: name,
             email: email,
-            message: message
+            message: message,
+            captchaResponse: captchaResponse  // Add reCAPTCHA response
         };
 
         try {
-            const response = await fetch('/send-email', {  // Proxy endpoint 
+            // Send the data to the serverless function
+            const response = await fetch('/.netlify/functions/send-email', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -165,12 +178,12 @@
                 alert('Your message has been sent successfully!');
                 form.reset();
             } else {
-                const errorData = await response.json();
-                alert('Failed to send message: ' + errorData.message);
+                let errorData = await response.json();
+                alert('Failed to send message: ' + (errorData.message || 'Unknown error'));
             }
         } catch (error) {
             alert('An error occurred: ' + error.message);
         }
     });
-</script>
 
+</script>
