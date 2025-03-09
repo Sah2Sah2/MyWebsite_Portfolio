@@ -1,11 +1,11 @@
-// Import `dotenv` to load environment variables
+// Import dotenv at the top to load environment variables
 require('dotenv').config();
-
-// Dynamically import `node-fetch` at the top level (outside handler)
-const fetch = require('node-fetch');  // Use regular require for node-fetch as it supports CommonJS now
 
 // Export the handler function directly with async wrapper
 exports.handler = async (event, context) => {
+    // Dynamically import `node-fetch` inside the function
+    const { default: fetch } = await import('node-fetch');
+
     // Check for POST method
     if (event.httpMethod !== 'POST') {
         return {
