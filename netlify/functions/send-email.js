@@ -1,10 +1,11 @@
-// Replace require statement
 let fetch;
+
 (async () => {
     fetch = (await import('node-fetch')).default;  // Dynamically import node-fetch
 
     require('dotenv').config();
 
+    // Export fun
     exports.handler = async (event, context) => {
         // Check for POST method
         if (event.httpMethod !== 'POST') {
