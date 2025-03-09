@@ -1,11 +1,10 @@
-// Dynamically import node-fetch and load environment variables synchronously
-let fetch;
-(async () => {
-    fetch = (await import('node-fetch')).default;  // Dynamically import node-fetch
-    require('dotenv').config();  // Load environment variables
-})();
+// Import `dotenv` to load environment variables
+require('dotenv').config();
 
-// Export the handler function directly no async wrapper
+// Dynamically import `node-fetch` at the top level (outside handler)
+const fetch = require('node-fetch');  // Use regular require for node-fetch as it supports CommonJS now
+
+// Export the handler function directly with async wrapper
 exports.handler = async (event, context) => {
     // Check for POST method
     if (event.httpMethod !== 'POST') {
@@ -29,14 +28,6 @@ exports.handler = async (event, context) => {
 
     try {
         console.log('Verifying reCAPTCHA with URL:', recaptchaVerifyUrl);  // Log the URL being hit
-
-        // Make sure fetch is initialized before using it
-        if (!fetch) {
-            return {
-                statusCode: 500,
-                body: JSON.stringify({ message: 'Failed to initialize fetch' }),
-            };
-        }
 
         const recaptchaResponse = await fetch(recaptchaVerifyUrl, { method: 'POST' });
         const recaptchaResult = await recaptchaResponse.json();
