@@ -139,51 +139,58 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 <script>
-    const form = document.getElementById('contact-form');
+  const form = document.getElementById('contact-form');
 
-    form.addEventListener('submit', async (event) => {
-        event.preventDefault();
+form.addEventListener('submit', async (event) => {
+    event.preventDefault();
 
-        const name = document.getElementById('name').value.trim();
-        const email = document.getElementById('email').value.trim();
-        const message = document.getElementById('message').value.trim();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
 
-        // Get the reCAPTCHA response
-        const captchaResponse = grecaptcha.getResponse();
+    // Get the reCAPTCHA response
+    const captchaResponse = grecaptcha.getResponse();
 
-        // Frontend validation 
-        if (!name || !email || !message || !captchaResponse) {
-            alert("All fields and reCAPTCHA are required.");
-            return;
-        }
+    // Frontend validation 
+    if (!name || !email || !message || !captchaResponse) {
+        alert("All fields and reCAPTCHA are required.");
+        return;
+    }
 
-        const formData = {
-            name: name,
-            email: email,
-            message: message,
-            captchaResponse: captchaResponse  // Add reCAPTCHA response
-        };
+    const formData = {
+        name: name,
+        email: email,
+        message: message,
+        captchaResponse: captchaResponse  // Add reCAPTCHA response
+    };
 
-        try {
-            // Send the data to the serverless function
-            const response = await fetch('/.netlify/functions/send-email', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            });
+    try {
+        // Send the data to the serverless function
+        const response = await fetch('/.netlify/functions/send-email', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(formData)
+        });
 
-            if (response.ok) {
-                alert('Your message has been sent successfully!');
-                form.reset();
-            } else {
-                let errorData = await response.json();
-                alert('Failed to send message: ' + (errorData.message || 'Unknown error'));
+        if (response.ok) {
+            alert('Your message has been sent successfully!');
+            form.reset();
+        } else {
+            // Check if the response is empty
+            let errorData = {};
+            try {
+                errorData = await response.json();
+            } catch (error) {
+                errorData = { message: 'Failed to send message. Please try again later.' };
             }
-        } catch (error) {
-            alert('An error occurred: ' + error.message);
+
+            alert('Failed to send message: ' + (errorData.message || 'Unknown error'));
         }
-    });
+    } catch (error) {
+        alert('An error occurred: ' + error.message);
+    }
+});
 
 </script>
