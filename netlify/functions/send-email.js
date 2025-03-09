@@ -1,11 +1,11 @@
 let fetch;
 
+// Dynamically import node-fetch before the handler is exported
 (async () => {
     fetch = (await import('node-fetch')).default;  // Dynamically import node-fetch
+    require('dotenv').config();  // Load environment variables
 
-    require('dotenv').config();
-
-    // Export fun
+    // Export the handler function after node-fetch and dotenv are loaded
     exports.handler = async (event, context) => {
         // Check for POST method
         if (event.httpMethod !== 'POST') {
