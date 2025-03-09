@@ -1,0 +1,23 @@
+{
+  "name": "mywebsite4",
+  "version": "1.0.0",
+  "main": "moon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Sah2Sah2/MyWebsite_Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Sah2Sah2/MyWebsite_Portfolio/issues"
+  },
+  "homepage": "https://github.com/Sah2Sah2/MyWebsite_Portfolio#readme",
+  "description": "",
+  "dependencies": {
+    "node-fetch": "^3.3.2"
+  }
+}
