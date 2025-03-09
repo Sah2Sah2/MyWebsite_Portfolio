@@ -1,11 +1,8 @@
-// Dynamically import node-fetch and load environment variables synchronously
-let fetch;
-(async () => {
-    fetch = (await import('node-fetch')).default;  // Dynamically import node-fetch
-    require('dotenv').config();  // Load environment variables
-})();
+// Import node-fetch and dotenv synchronously
+const fetch = require('node-fetch'); // Import fetch synchronously
+require('dotenv').config();  // Load environment variables
 
-// Export the handler function directly no async wrapper
+// Export the handler function directly without async wrapper
 exports.handler = async (event, context) => {
     // Check for POST method
     if (event.httpMethod !== 'POST') {
