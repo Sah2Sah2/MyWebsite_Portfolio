@@ -1,5 +1,5 @@
 [build]
-  publish = "public"   
+  publish = "/"   
   functions = "netlify/functions"  # Path to your functions folder
 
 [[redirects]]
