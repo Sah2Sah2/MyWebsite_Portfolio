@@ -12,6 +12,8 @@ exports.handler = async (event, context) => {
 
     const { name, email, message, captchaResponse } = JSON.parse(event.body);
 
+    console.log("Received data:", { name, email, message, captchaResponse }); // Debugging log
+
     if (!name || !email || !message || !captchaResponse) {
         return {
             statusCode: 400,
