@@ -1,12 +1,8 @@
-// Import dotenv at the top to load environment variables
 require('dotenv').config();
 
-// Export the handler function directly with async wrapper
 exports.handler = async (event, context) => {
-    // Dynamically import `node-fetch` inside the function
     const { default: fetch } = await import('node-fetch');
 
-    // Check for POST method
     if (event.httpMethod !== 'POST') {
         return {
             statusCode: 405,
@@ -27,12 +23,12 @@ exports.handler = async (event, context) => {
     const recaptchaVerifyUrl = `https://www.google.com/recaptcha/api/siteverify?secret=${process.env.RECAPTCHA_SECRET}&response=${captchaResponse}`;
 
     try {
-        console.log('Verifying reCAPTCHA with URL:', recaptchaVerifyUrl);  // Log the URL being hit
+        console.log('Verifying reCAPTCHA with URL:', recaptchaVerifyUrl);
 
         const recaptchaResponse = await fetch(recaptchaVerifyUrl, { method: 'POST' });
         const recaptchaResult = await recaptchaResponse.json();
 
-        console.log('reCAPTCHA verification result:', recaptchaResult);  // Log the reCAPTCHA verification result
+        console.log('reCAPTCHA verification result:', recaptchaResult);
 
         if (!recaptchaResult.success) {
             return {
@@ -52,7 +48,7 @@ exports.handler = async (event, context) => {
             };
         }
 
-        console.log('Sending email data to API URL:', apiUrl);  // Log the API URL being used
+        console.log('Sending email data to API URL:', apiUrl);
 
         const response = await fetch(`${apiUrl}/send-email`, {
             method: 'POST',
@@ -60,29 +56,23 @@ exports.handler = async (event, context) => {
             body: JSON.stringify({ name, email, message, captchaResponse }),
         });
 
-        const responseBody = await response.text();  // Capture response body as text
+        const responseBody = await response.text();
+        console.log('Email API response body:', responseBody);
 
-        console.log('Email API response body:', responseBody);  // Log the response body
-
-        if (response.ok) {
-            return {
-                statusCode: 200,
-                body: JSON.stringify({ message: 'Email sent successfully!' }),
-            };
-        } else {
-            let errorData = {};
-            try {
-                errorData = JSON.parse(responseBody);  // Attempt to parse response body as JSON
-            } catch (error) {
-                console.error('Error parsing response body:', error);
-            }
-            return {
-                statusCode: 500,
-                body: JSON.stringify({ message: errorData.message || 'Failed to send email' }),
-            };
+        let errorData = {};
+        try {
+            errorData = JSON.parse(responseBody);
+        } catch (error) {
+            console.error('Error parsing response body:', error);
+            errorData = { message: 'Unknown error' };
         }
+
+        return {
+            statusCode: response.ok ? 200 : 500,
+            body: JSON.stringify({ message: errorData.message || 'Failed to send email' }),
+        };
     } catch (error) {
-        console.error('Error in handler:', error);  // Log the error that occurred
+        console.error('Error in handler:', error);
         return {
             statusCode: 500,
             body: JSON.stringify({ message: 'Failed to process the request' }),
