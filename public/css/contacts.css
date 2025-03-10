@@ -213,6 +213,7 @@ SOCIALS
     transform: translateX(-50%);
     display: flex;
     gap: 10px;
+    margin-bottom: 20px;
 }
 
 /* Common button styles */
@@ -350,17 +351,32 @@ form .btn.btn-primary:hover {
 
 @media (max-width: 768px) {
     .form-container {
-        padding: 12px;
+        padding: 15px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .form-container form {
+        width: 100%; 
+        align-items: stretch;
+    }
+
+    form .contact-form {
         width: 100%;
     }
 
+    .form-container h3 {
+        font-size: 1.5rem;
+        margin-bottom: 20px; 
+    }
+
     form {
-        gap: 25px; 
+        gap: 5px; 
     }
 
     form .form-control {
         font-size: 1rem;
-        padding: 16px;
+        padding: 4px; 
     }
 
     #message.form-control {
@@ -372,9 +388,17 @@ form .btn.btn-primary:hover {
         font-size: 0.95rem;
     }
 
-    form .btn.btn-primary {
-        padding: 14px 22px;
+    .g-recaptcha {
+        transform: scale(0.8); 
+        transform-origin: 0 0; 
+        width: 100% !important; 
     }
+
+    form .btn.btn-primary {
+        padding: 12px 0px;
+        margin-top: 10px; 
+    }
+    
     .tooltip-text {
         width: 150px; 
         left: 50%;
@@ -382,7 +406,6 @@ form .btn.btn-primary:hover {
         font-size: 12px; 
         top: 100%; 
     }
-
 }
 
 @media (max-width: 480px) {
