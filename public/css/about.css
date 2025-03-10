@@ -4,15 +4,15 @@ ABOUT SECTION - Styling
 -----------------------------------------------------------
 */
 
-body.about-page {
+body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
+    overflow-y: auto;
     overflow-x: hidden;
-    overflow-y: scroll;
-    padding-top: 80px;
+    margin: 0; 
+    padding: 0; 
 }
-
 
 /*
 -----------------------------------------------------------
@@ -111,6 +111,7 @@ SLIDING TEXT
     width: 100%; 
     padding-right: 10px;
     will-change: transform;
+    overflow: hidden;
 }
 
 /* Each sliding text piece */
@@ -150,12 +151,10 @@ h1, h2, p {
 .about-me {
     padding-top: 80px;
     padding-bottom: 80px;
-    height: auto; 
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    min-height: 100vh; 
-    overflow: visible; 
+    flex-grow: 1;
 }
 
 /* About Me Heading h1 */
@@ -231,15 +230,6 @@ h1, h2, p {
     100% {
         transform: translateY(0);
     }
-}
-
-.about-me {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: calc(100vh - 100px); 
-    padding-top: 80px;
-    padding-bottom: 80px; 
 }
 
 .about-me p {
