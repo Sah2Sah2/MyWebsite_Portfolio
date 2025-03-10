@@ -9,27 +9,10 @@ body.about-page {
     flex-direction: column;
     min-height: 100vh;
     overflow-x: hidden;
-    overflow-y: auto;
+    overflow-y: scroll;
     padding-top: 80px;
 }
 
-/* About Section */
-.about-me {
-    padding-top: 80px;
-    padding-bottom: 80px;
-    max-height: 100vh;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    min-height: calc(100vh - 100px);
-}
-
-html {
-    overflow-x: hidden; 
-    overflow-y: auto;   
-    height: 100%;
-}
 
 /*
 -----------------------------------------------------------
@@ -43,8 +26,7 @@ CAROUSEL
     margin: 20px auto;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-   
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);  
 }
 
 .carousel-inner {
@@ -166,15 +148,14 @@ h1, h2, p {
 }
 
 .about-me {
-    height: calc(100vh - 160px); 
     padding-top: 80px;
     padding-bottom: 80px;
-    position: relative;
-    overflow: hidden;  
-}
-
-.about-me {
-    max-height: 100vh;
+    height: auto; 
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    min-height: 100vh; 
+    overflow: visible; 
 }
 
 /* About Me Heading h1 */
