@@ -46,6 +46,17 @@ header {
     transition: background-color 0.3s ease-in-out; 
 }
 
+/* Project name styling */
+header h1 {
+    margin-bottom: 0; 
+    font-size: 1.5rem; 
+    padding: 10px 0; 
+    color: white !important; 
+    position: relative; 
+    z-index: 2; 
+    opacity: 1 !important;
+}
+
 /* Add a sky background */
 #sky {
     height: 100%;  
@@ -65,17 +76,6 @@ header {
     border-radius: 50%;
     background-color: white;
     box-shadow: 0px 0px 5px rgba(255, 255, 255, 0.4);
-}
-
-/* Project name styling */
-header h1 {
-    margin-bottom: 0; 
-    font-size: 1.5rem; 
-    padding: 10px 0; 
-    color: white !important; 
-    position: relative; 
-    z-index: 2; 
-    opacity: 1 !important;
 }
 
 /*
@@ -278,7 +278,7 @@ SCROLL BAR
 
 @media (max-width: 767px) {
     header h1 {
-        font-size: 1.2rem; 
+        font-size: 1rem; 
     }
 
     nav.navbar .navbar-nav {
@@ -303,5 +303,23 @@ SCROLL BAR
 
     button#theme-toggle {
         font-size: 1.2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    header h1 {
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 360px) {
+    header h1 {
+        display: none; 
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    html {
+        -webkit-text-size-adjust: 100%; 
     }
 }

@@ -392,7 +392,9 @@ form .btn.btn-primary:hover {
         transform: scale(0.8); 
         transform-origin: 0 0; 
         width: 100% !important; 
+        height: 100px !important;
     }
+
 
     form .btn.btn-primary {
         padding: 12px 0px;
@@ -436,3 +438,5 @@ form .btn.btn-primary:hover {
         top: 95%;
     }
 }
+
+
