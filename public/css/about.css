@@ -111,7 +111,7 @@ SLIDING TEXT
     width: 100%; 
     padding-right: 10px;
     will-change: transform;
-    overflow: hidden;
+    overflow: visible;
 }
 
 /* Each sliding text piece */
@@ -326,7 +326,7 @@ p a:hover::after {
 
     .sliding-text-wrapper {
         white-space: nowrap;
-        animation: slideText 15s linear infinite; 
+        animation: slideText 20s linear infinite; 
         will-change: transform;
     }
 
