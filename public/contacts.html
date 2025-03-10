@@ -145,72 +145,74 @@
     loader.textContent = "Sending...";
     loader.style.display = 'none';  // Initially hide the loader
     form.appendChild(loader);  // Add the loader to the form
-  
+
     let isSubmitting = false;  // Prevent multiple submissions
-  
+
     form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-  
-      if (isSubmitting) return; // Prevent duplicate submissions
-  
-      isSubmitting = true; // Set flag to true while submitting
-      submitButton.disabled = true; // Disable submit button
-      loader.style.display = 'block'; // Show the loader
-  
-      const name = document.getElementById('name').value.trim();
-      const email = document.getElementById('email').value.trim();
-      const message = document.getElementById('message').value.trim();
-  
-      // Get the reCAPTCHA response
-      const captchaResponse = grecaptcha.getResponse();
-  
-      // Frontend validation
-      if (!name || !email || !message || !captchaResponse) {
+    event.preventDefault();
+
+    // If already submitting, prevent further submissions
+    if (isSubmitting) return;
+
+    isSubmitting = true; // Set flag to true while submitting
+    submitButton.disabled = true; // Disable submit button
+    loader.style.display = 'block'; // Show the loader
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    // Get the reCAPTCHA response
+    const captchaResponse = grecaptcha.getResponse();
+
+    // Frontend validation
+    if (!name || !email || !message || !captchaResponse) {
         alert("All fields and reCAPTCHA are required.");
         isSubmitting = false;
         submitButton.disabled = false;
         loader.style.display = 'none';
         return;
-      }
-  
-      const formData = {
+    }
+
+    const formData = {
         name: name,
         email: email,
         message: message,
         captchaResponse: captchaResponse  // Add reCAPTCHA response
-      };
-  
-      try {
+    };
+
+    try {
         // Send the data to the serverless function
         const response = await fetch('/.netlify/functions/send-email', {
-          method: 'POST',
-          headers: {
+        method: 'POST',
+        headers: {
             'Content-Type': 'application/json'
-          },
-          body: JSON.stringify(formData)
+        },
+        body: JSON.stringify(formData)
         });
-  
+
         if (response.ok) {
-          alert('Your message has been sent successfully!');
-          form.reset();
+        alert('Your message has been sent successfully!');
+        form.reset();
         } else {
-          // Check if the response is empty
-          let errorData = {};
-          try {
+        // Check if the response is empty
+        let errorData = {};
+        try {
             errorData = await response.json();
-          } catch (error) {
+        } catch (error) {
             errorData = { message: 'Failed to send message. Please try again later.' };
-          }
-  
-          alert('Failed to send message: ' + (errorData.message || 'Unknown error'));
         }
-      } catch (error) {
+
+        alert('Failed to send message: ' + (errorData.message || 'Unknown error'));
+        }
+    } catch (error) {
         alert('An error occurred: ' + error.message);
-      } finally {
-        isSubmitting = false;
-        submitButton.disabled = false;
+    } finally {
+        isSubmitting = false;  // Reset submission flag
+        submitButton.disabled = false;  // Re-enable submit button
         loader.style.display = 'none';  // Hide the loader after submission
-      }
+    }
     });
+
   </script>
   
