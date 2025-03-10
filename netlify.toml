@@ -1,7 +1,2 @@
 [build]
   publish = "public"   
-
-[[redirects]]
-  from = "/send-email"
-  status = 200
-  force = true
